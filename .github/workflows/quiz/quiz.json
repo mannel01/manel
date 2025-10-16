@@ -1,0 +1,52 @@
+[
+  {
+    "pergunta": "Qual seleção venceu a Copa do Mundo de 2006?",
+    "opcoes": ["Brasil", "Itália", "França", "Alemanha"],
+    "resposta_correta": "Itália"
+  },
+  {
+    "pergunta": "Em que clube Cristiano Ronaldo iniciou sua carreira profissional?",
+    "opcoes": ["Sporting", "Manchester United", "Real Madrid", "Benfica"],
+    "resposta_correta": "Sporting"
+  },
+  {
+    "pergunta": "Qual país sediou a primeira Copa do Mundo da FIFA em 1930?",
+    "opcoes": ["Brasil", "Uruguai", "Itália", "Argentina"],
+    "resposta_correta": "Uruguai"
+  },
+  {
+    "pergunta": "Quantos jogadores cada equipe deve ter em campo no início de uma partida oficial?",
+    "opcoes": ["10", "11", "12", "9"],
+    "resposta_correta": "11"
+  },
+  {
+    "pergunta": "Qual é o time com mais títulos da Liga dos Campeões da UEFA?",
+    "opcoes": ["Barcelona", "Real Madrid", "Bayern de Munique", "Liverpool"],
+    "resposta_correta": "Real Madrid"
+  },
+  {
+    "pergunta": "Em que ano o Brasil conquistou seu primeiro título de Copa do Mundo?",
+    "opcoes": ["1950", "1954", "1958", "1962"],
+    "resposta_correta": "1958"
+  },
+  {
+    "pergunta": "Qual jogador é conhecido como 'O Fenômeno'?",
+    "opcoes": ["Ronaldinho Gaúcho", "Romário", "Ronaldo Nazário", "Neymar"],
+    "resposta_correta": "Ronaldo Nazário"
+  },
+  {
+    "pergunta": "Qual clube brasileiro tem o apelido de 'Galo'?",
+    "opcoes": ["Cruzeiro", "Atlético Mineiro", "Flamengo", "Corinthians"],
+    "resposta_correta": "Atlético Mineiro"
+  },
+  {
+    "pergunta": "Qual país foi vice-campeão na Copa do Mundo de 2014?",
+    "opcoes": ["Argentina", "Holanda", "Alemanha", "Brasil"],
+    "resposta_correta": "Argentina"
+  },
+  {
+    "pergunta": "Quem foi o artilheiro da Copa do Mundo de 2002?",
+    "opcoes": ["Miroslav Klose", "Ronaldo", "Rivaldo", "Ronaldinho Gaúcho"],
+    "resposta_correta": "Ronaldo"
+  }
+]

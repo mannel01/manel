@@ -1,0 +1,131 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: 'Times New Roman', sans-serif;
+  background: rgba(0, 15, 66, 0.993);
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+}
+
+#quiz-container {
+  width: 600px;
+  height: auto;
+  background: #cbcbd5;
+  border-radius: 20px;
+  cursor: pointer;
+  transform: perspective(800px) rotateX(45deg) scale(0.7);
+  box-shadow: 0 25px 50px rgba(100,120,150,0.3),
+              inset 0 -4px 8px rgba(255, 255, 255, 0.6);
+  transition: transform 0.5s ease, box-shadow 0.6s ease;
+}
+
+#quiz-container:hover {
+  transform:  rotateX(0deg) scale(1) translateY(-10px);
+  box-shadow: 0 35px 70px rgba(80, 100, 130, 0.35),
+        inset 0 -6px 10px rgba(255,255,255,0.7);
+}
+
+#progresso-container {
+  background: #eee;
+  border-radius: 10px;
+  height: 10px;
+  margin: 10px 0 25px;
+  overflow: hidden;
+}
+
+#progresso-bar {
+  background: #00c853;
+  height: 10px;
+  width: 0%;
+  transition: width 0.4s ease;
+}
+
+.contador {
+  font-size: 14px;
+  margin-bottom: 15px;
+  color: #666;
+}
+
+#pergunta {
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+#opcoes button {
+  display: block;
+  width: 100%;
+  margin: 8px 0;
+  padding: 10px;
+  font-size: 16px;
+  border: none;
+  border-radius: 8px;
+  background: #f2f2f2;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#opcoes button:hover {
+  background: #e0e0e0;
+  transform: scale(1.03);
+  align-items: end;
+  justify-items: flex-end;
+}
+
+.correto {
+  background: #4CAF50 !important;
+  color: white;
+}
+
+.errado {
+  background: #E74C3C !important;
+  color: white;
+}
+
+#proximo {
+  display: none;
+  margin-top: 15px;
+  background: #0077ff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+  align-items: end;
+}
+
+#proximo:hover {
+  background: #005ecb;
+  align-items: end;
+}
+
+#resultado {
+  display: none;
+  animation: fadeIn 0.5s ease-in-out;
+  text-align: center;
+}
+
+#resultado button {
+  background: #00c853;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+#resultado button:hover {
+  background: #00a844;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
