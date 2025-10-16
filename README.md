@@ -1,8 +1,5 @@
-Projeto de Programação Orientada a Objetos sobre um sistema de reserva de hotel.
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/mannel01/mannel01/output/pacman-contribution-graph-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/mannel01/mannel01/output/pacman-contribution-graph.svg">
   <img alt="pacman contribution graph" src="https://raw.githubusercontent.com/mannel01/mannel01/output/pacman-contribution-graph.svg">
 </picture>
-
-###
