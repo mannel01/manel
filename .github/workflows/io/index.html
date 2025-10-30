@@ -1,0 +1,210 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Forca — Livros&Companhia</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container" role="main">
+    <header class="header">
+      <h1>Jogo da Forca</h1>
+      <p class="subtitle">Adivinhe a palavra antes do personagem ser enforcado!</p>
+    </header>
+
+    <section class="game">
+      <div class="hangman-canvas" aria-hidden="true">
+        
+        <svg viewBox="0 0 200 200" class="svg-hangman">
+          <g stroke-linecap="round" stroke-linejoin="round" stroke-width="3">
+            <!-- base e estrutura -->
+            <line x1="10" y1="190" x2="190" y2="190" class="part" id="p0"/> <!-- base -->
+            <line x1="50" y1="190" x2="50" y2="20" class="part" id="p1"/>   <!-- poste -->
+            <line x1="50" y1="20" x2="130" y2="20" class="part" id="p2"/>   <!-- braço -->
+            <line x1="130" y1="20" x2="130" y2="40" class="part" id="p3"/>  <!-- corda -->
+            <!-- boneco (aparecem com falhas) -->
+            <circle cx="130" cy="55" r="12" class="part" id="p4"/>           <!-- cabeça -->
+            <line x1="130" y1="67" x2="130" y2="110" class="part" id="p5"/> <!-- tronco -->
+            <line x1="130" y1="80" x2="110" y2="95" class="part" id="p6"/>  <!-- braço esquerda -->
+            <line x1="130" y1="80" x2="150" y2="95" class="part" id="p7"/>  <!-- braço direita -->
+            <line x1="130" y1="110" x2="115" y2="140" class="part" id="p8"/> <!-- perna esquerda -->
+            <line x1="130" y1="110" x2="145" y2="140" class="part" id="p9"/> <!-- perna direita -->
+          </g>
+        </svg>
+      </div>
+
+      <div class="board">
+        <div class="word" id="word" aria-live="polite" aria-label="Palavra a adivinhar">
+          <!-- underscores vão aqui -->
+        </div>
+
+        <div class="info">
+          <div class="status">
+            <span id="wrongCount">0</span> / <span id="maxWrong">9</span> erros
+          </div>
+          <button id="newGame" class="btn">Nova palavra</button>
+        </div>
+
+        <div class="keyboard" id="keyboard" aria-label="Teclado de letras">
+          <!-- teclado virtual gerado por JS -->
+        </div>
+
+        <div class="hint" id="hint" aria-live="polite"></div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <small>Palavras: categorias variadas — pronto para usar em seu jogo.</small>
+    </footer>
+  </main>
+
+  <script>
+    // JSON com 20 palavras (pode trocar / carregar de arquivo externo)
+    const data = {
+      "palavras": [
+        "abacaxi",
+        "montanha",
+        "computador",
+        "girassol",
+        "planeta",
+        "cachorro",
+        "violino",
+        "escola",
+        "astronauta",
+        "futebol",
+        "oceano",
+        "biblioteca",
+        "chocolate",
+        "diamante",
+        "floresta",
+        "maratona",
+        "telefone",
+        "vulcao",
+        "relampago",
+        "universo"
+      ]
+    };
+
+    // --- Config ---
+    const MAX_WRONG = 9;
+    const letters = "abcdefghijklmnopqrstuvwxyz".split('');
+    // --- Estado ---
+    let secret = "";
+    let revealed = [];
+    let wrongGuesses = 0;
+    const keyboardEl = document.getElementById('keyboard');
+    const wordEl = document.getElementById('word');
+    const wrongCountEl = document.getElementById('wrongCount');
+    const maxWrongEl = document.getElementById('maxWrong');
+    const hintEl = document.getElementById('hint');
+
+    maxWrongEl.textContent = MAX_WRONG;
+
+    // Inicializa teclado
+    function createKeyboard() {
+      keyboardEl.innerHTML = '';
+      for (const l of letters) {
+        const btn = document.createElement('button');
+        btn.className = 'key';
+        btn.textContent = l;
+        btn.dataset.letter = l;
+        btn.setAttribute('aria-label', 'Letra ' + l);
+        btn.addEventListener('click', () => handleGuess(l, btn));
+        keyboardEl.appendChild(btn);
+      }
+    }
+
+    // Escolhe palavra aleatória
+    function pickWord() {
+      const arr = data.palavras.filter(Boolean);
+      const choice = arr[Math.floor(Math.random() * arr.length)];
+      return choice.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, ''); // remove acentos para facilitar
+    }
+
+    function startGame() {
+      secret = pickWord();
+      revealed = Array.from(secret).map(ch => (ch === '-' || ch === ' ' ? ch : '_'));
+      wrongGuesses = 0;
+      updateUI();
+      createKeyboard();
+      renderHangman();
+      hintEl.textContent = "";
+    }
+
+    function updateUI() {
+      // mostrar palavra separada por espaços
+      wordEl.textContent = revealed.join(' ');
+      wrongCountEl.textContent = wrongGuesses;
+    }
+
+    function handleGuess(letter, btn) {
+      if (!btn) {
+        // chamado por teclado físico
+        btn = [...keyboardEl.children].find(b => b.dataset.letter === letter);
+      }
+      if (!btn || btn.disabled) return;
+      btn.disabled = true;
+      btn.classList.add('used');
+
+      if (secret.includes(letter)) {
+        // revela todas as ocorrências
+        for (let i = 0; i < secret.length; i++) {
+          if (secret[i] === letter) revealed[i] = letter;
+        }
+      } else {
+        wrongGuesses++;
+      }
+
+      updateUI();
+      renderHangman();
+      checkEnd();
+    }
+
+    function renderHangman() {
+      // mostra partes do SVG conforme erros (p0..p9)
+      for (let i = 0; i <= 9; i++) {
+        const el = document.getElementById('p' + i);
+        if (!el) continue;
+        if (i <= wrongGuesses - 1) {
+          el.style.opacity = '1';
+        } else {
+          el.style.opacity = i <= 3 ? '1' : '0'; // base/estrutura always visible (p0,p1,p2,p3)
+        }
+      }
+    }
+
+    function checkEnd() {
+      if (!revealed.includes('_')) {
+        hintEl.textContent = "Você venceu! Palavra: " + secret;
+        disableKeyboard();
+      } else if (wrongGuesses >= MAX_WRONG) {
+        hintEl.textContent = "Você perdeu. Palavra era: " + secret;
+        revealAll();
+        disableKeyboard();
+      }
+    }
+
+    function revealAll() {
+      revealed = Array.from(secret);
+      updateUI();
+    }
+
+    function disableKeyboard() {
+      [...keyboardEl.children].forEach(b => b.disabled = true);
+    }
+
+    // suporte a teclado físico
+    window.addEventListener('keydown', (e) => {
+      const k = e.key.toLowerCase();
+      if (/^[a-z]$/.test(k)) handleGuess(k);
+    });
+
+    // Nova partida
+    document.getElementById('newGame').addEventListener('click', startGame);
+
+    // start
+    startGame();
+  </script>
+</body>
+</html>
