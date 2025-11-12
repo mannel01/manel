@@ -146,3 +146,102 @@ header {
     left: 55px;
     transform: rotate(25deg);
 }
+
+.mensagem-final {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    animation: aparecer 0.5s ease-in-out;
+}
+
+.mensagem-final.vitoria h2 {
+    color: #2e7d32;
+}
+
+.mensagem-final.derrota h2 {
+    color: #c62828;
+}
+
+.botoes-finais button {
+    background-color: #6200ea;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin: 10px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.botoes-finais button:hover {
+    background-color: #4e00b8;
+}
+
+@keyframes aparecer {
+    from { opacity: 0; transform: scale(0.9); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+/* ===== Tela de adicionar palavra ===== */
+.adicionar-palavra {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    background-color: #f5f5f5;
+    border-radius: 16px;
+    padding: 2rem;
+    max-width: 400px;
+    margin: 2rem auto;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.adicionar-palavra h2 {
+    color: #222;
+    margin-bottom: 0.5rem;
+}
+
+.adicionar-palavra input {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.adicionar-palavra input:focus {
+    border-color: #621885;
+}
+
+.adicionar-palavra button {
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    background-color: #4e00b8;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.adicionar-palavra button:hover {
+    background-color: #6200ea ;
+}
+
+.adicionar-palavra #cancelar {
+    background-color: #ccc;
+}
+
+.adicionar-palavra #cancelar:hover {
+    background-color: #999;
+}
+
+.mensagem {
+    text-align: center;
+    font-size: 1rem;
+    color: #222;
+    margin-bottom: 1rem;
+}
