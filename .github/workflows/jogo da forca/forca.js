@@ -4,14 +4,14 @@ let letrasErradas = [];
 let tentativas = 6;
 
 const jogoDiv = document.querySelector(".jogo");
-const btnJogar = document.querySelectorAll("button")[1];
 const btnAdicionar = document.querySelectorAll("button")[0];
+const btnJogar = document.querySelectorAll("button")[1];
 
 btnJogar.addEventListener("click", iniciarJogo);
 btnAdicionar.addEventListener("click", mostrarCampoAdicionar);
 
 async function carregarPalavras() {
-    const resposta = await fetch("forca.json"); // nome correto do arquivo
+    const resposta = await fetch("forca.json"); 
     const dados = await resposta.json();
     return dados.palavras;
 }
@@ -53,7 +53,6 @@ function mostrarCampoAdicionar() {
     document.querySelector("#cancelar").addEventListener("click", renderizarTelaInicial);
 }
 
-// ===== Tela inicial =====
 function renderizarTelaInicial() {
     jogoDiv.innerHTML = `
         <p>Bem-vindo ao jogo da forca!</p>
@@ -61,7 +60,6 @@ function renderizarTelaInicial() {
     `;
 }
 
-// ===== Renderizar o jogo =====
 function renderizarJogo() {
     jogoDiv.innerHTML = `
         <div class="forca-status">
@@ -83,7 +81,6 @@ function renderizarJogo() {
     `;
 }
 
-// ===== Mostrar palavra com underlines =====
 function getPalavraOculta() {
     return palavraSelecionada
         .split("")
@@ -91,20 +88,18 @@ function getPalavraOculta() {
         .join(" ");
 }
 
-// ===== Verificar letra do teclado físico =====
 function verificarLetra(e) {
     const letra = e.key.toUpperCase();
     if (!/^[A-ZÇÃÕÂÊÎÔÛÁÉÍÓÚ]$/.test(letra)) return;
     atualizarLetras(letra);
 }
 
-// ===== Letra clicada no teclado virtual =====
+
 function clicarTecla(letra) {
     letra = letra.toUpperCase();
     atualizarLetras(letra);
 }
 
-// ===== Atualiza estado de acertos/erros =====
 function atualizarLetras(letra) {
     if (palavraSelecionada.includes(letra)) {
         if (!letrasCorretas.includes(letra)) letrasCorretas.push(letra);
@@ -118,7 +113,6 @@ function atualizarLetras(letra) {
     checarResultado();
 }
 
-// ===== Gera o teclado virtual =====
 function gerarTeclado() {
     const alfabeto = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     return alfabeto
@@ -136,7 +130,6 @@ function gerarTeclado() {
         .join("");
 }
 
-// ===== Checa vitória ou derrota =====
 function checarResultado() {
     const venceu = palavraSelecionada.split("").every(letra => letrasCorretas.includes(letra));
 
@@ -147,7 +140,6 @@ function checarResultado() {
     }
 }
 
-// ===== Mostra mensagem de fim de jogo =====
 function mostrarMensagemFinal(texto, venceu) {
     jogoDiv.innerHTML = `
         <div class="mensagem-final ${venceu ? "vitoria" : "derrota"}">
@@ -164,5 +156,4 @@ function mostrarMensagemFinal(texto, venceu) {
     document.removeEventListener("keydown", verificarLetra);
 }
 
-// ===== Inicia com a tela inicial =====
 renderizarTelaInicial();
