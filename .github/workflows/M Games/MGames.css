@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Orbitron", sans-serif;
+}
+
+body {
+    background: radial-gradient(circle at top, #0a0f1f, #000);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+/* Container principal */
+.form-container {
+    width: 100%;
+    max-width: 380px;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 400px; 
+}
+
+/* Estilos gerais para login e cadastro */
+.login,
+.cadastrar {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    border: 2px solid rgba(0, 255, 255, 0.3);
+    border-radius: 15px;
+    box-shadow: 0 0 20px #00ffff55;
+    padding: 30px 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+
+    opacity: 0;
+    pointer-events: none;
+    transform: scale(0.9);
+    transition: 0.4s ease;
+}
+
+/* Tela ativa (visível) */
+.active {
+    opacity: 1;
+    pointer-events: all;
+    transform: scale(1);
+}
+
+/* Inputs do formulário */
+input {
+    padding: 12px;
+    border: 2px solid #00ffff44;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    outline: none;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+input:focus {
+    border-color: #00e1ff;
+    box-shadow: 0 0 10px #00e1ff;
+}
+
+/* Texto e links (Entrar/Cadastrar) */
+.txtEntrar, 
+.txtCadastrar {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+}
+
+.txtEntrar a,
+.txtCadastrar a {
+    color: #00e1ff;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.txtEntrar a:hover,
+.txtCadastrar a:hover {
+    text-shadow: 0 0 8px #00e1ff;
+}
+
+/* Botão principal */
+button {
+    margin-top: 10px;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    background: linear-gradient(90deg, #00e1ff, #007bff);
+    color: #000;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 0 12px #00e1ffaa;
+}
+
+button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #00e1ff;
+}
