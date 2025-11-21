@@ -1,6 +1,6 @@
 function ValidarCampos() {
     const emailValid = isEmailValid();
-    document.getElementById("ButtonEntrar").disabled = !emailValid;
+    document.getElementById("ButtonCadastrar").disabled = !emailValid;
 }
 
 function isEmailValid() {
@@ -15,10 +15,8 @@ function ValidarEmail(email) {
     return /\S+@\S+\.\S+/.test(email);
 }
 
+
 function Login() {
-    window.location.href = "../Home/Home.html";
+    window.location.href = "../Log/Login.html";
 }
 
-function Admin() {
-    window.location.href = "../Admins/Admin.html";
-}

@@ -18,12 +18,14 @@
 
     <div class="login">
         <img src="../Imgs/Samurai.jpeg" alt="">
+        <button class="btn-a" onclick="Admin()">Add Admin</button>
         <div class="card">
-                <div><label>Usuário</label></div>
-                <input class="campo" type="text"name="Usuario" id="User">
+                <div><label>E-mail</label></div>
+                <input class="campo" type="email" id="email" onchange="ValidarCampos()">
                 <div><label>Senha</label></div>
-                <input class="campo" type="password" name="Senha" id="Pass">
-                <button class="loginBotoes" id="ButtonEntrar">Entrar</button>
+                <input class="campo" type="password" name="Senha" id="senha">
+                <input type="checkbox" >
+                <button type="button" disabled="true" class="loginBotoes" id="ButtonEntrar" onclick="Login()">Entrar</button>
         </div>
     </div>
     
