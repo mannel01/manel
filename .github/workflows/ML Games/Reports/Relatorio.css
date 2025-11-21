@@ -1,0 +1,75 @@
+body{
+    background-image: url(gfundo.gif);
+}
+.vidro2{
+    position: absolute;
+    top: 1%;       
+    transform: translate(-50%, -50%);
+    margin: 0%;
+    padding: 10%;
+    padding-top: 35%;
+    height: 109.9vh;
+    width: 178.9%;
+    border: 5px;
+    border-color: aliceblue;
+    background-color: rgba(43, 43, 43, 0.278);
+    backdrop-filter: blur(15px) saturate(160%);
+    -webkit-backdrop-filter: blur(10px) saturate(160%);
+}
+.vidro3{
+    position: absolute;
+    top: 50%;           
+    left: 50%;       
+    transform: translate(-50%, -50%);
+    margin: 0%;
+    padding: 9%;
+    padding-top: 30%;
+    width: 40%;
+    border: 5px;
+    border-color: aliceblue;
+    border-radius: 30px;
+    background-color: rgba(43, 43, 43, 0.278);
+    backdrop-filter: blur(22px) saturate(160%);
+    -webkit-backdrop-filter: blur(22px) saturate(160%);
+}
+.logo img{
+    position: absolute;
+    top: 10%;           
+    left: 5%;          
+    transform: translate(-50%, -50%);
+    margin-left: 3%;
+    height: 15%;
+    width: 10%;
+}
+.barra-tela-produto{
+    position: absolute;
+    top: 5%;           
+    left: 5%;          
+    transform: translate(-5%, -5%);
+    position: absolute;
+    display: grid;
+    grid-template-columns: 30% 10%;
+    justify-content: space-between;
+}
+
+.btn-a{
+    padding: 20px;
+    text-align: center;
+    box-shadow: rgba(0, 0, 0, 0.452) 10px;
+    transition: 0.6s;
+    font-weight: bold;
+    font-size: 150%;
+    text-decoration: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: rgba(0, 0, 0, 0.452);
+    position: absolute;
+    top: 10%;           
+    left: 90%;          
+    transform: translate(-50%, -50%); 
+    margin: 0%;
+    color: white;
+    
+    border-radius: 2dvh;
+    backdrop-filter: blur(22px) saturate(160%);
+    -webkit-backdrop-filter: blur(22px) saturate(160%);
+}
