@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ML games</title>
     <link rel="stylesheet" href="Admin.css">
+    <link rel="stylesheet" href="../Global.css">
 </head>
 
 <body>
@@ -15,14 +16,20 @@
     </div>
     <div class="tela-admin">
         <div class="vidro">
-            <label>E-mail</label>
-            <input type="email" id="email" onchange="ValidarCampos()">
-            <label>Senha</label>
-            <input type="password" id="senha">
+            <div>
+                <label>E-mail</label>
+                <input type="email" id="email" onchange="ValidarCampos()">
+                <div class="error" id="email-invalido">E-mail inválido</div>
+                <div class="error" id="email-obrigatorio">E-mail é obrigatório</div>
+            </div>
+            <div>
+                <label>Senha</label>
+                <input type="password" id="senha">
+            </div>
             <div class="btns">
                 <button id="ButtonCadastrar" disabled="true">Cadastrar</button>
-                <button>Atualizar</button>
-                <button>Excluir</button>
+                <button id="ButtonAtualizar" disabled="true">Atualizar</button>
+                <button id="ButtonExcluir"   disabled="true">Excluir</button>
             </div>
         </div>
         <div class="vidro2"></div>

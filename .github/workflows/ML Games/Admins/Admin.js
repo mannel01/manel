@@ -1,4 +1,24 @@
 function ValidarCampos() {
+    toogleEmailErrors();
+    toogleButtonsDisable();
+}
+
+
+function toogleEmailErrors() {
+    const email = document.getElementById("email").value;
+    if(!email){
+        document.getElementById("email-obrigatorio").style.display = "block";
+        document.getElementById("email-invalido").style.display = "none";
+    } else if(ValidarEmail(email)){
+        document.getElementById("email-invalido").style.display = "none";
+        document.getElementById("email-obrigatorio").style.display = "none";
+    } else{
+        document.getElementById("email-invalido").style.display = "block";
+        document.getElementById("email-obrigatorio").style.display = "none";
+    }
+}
+
+function toogleButtonsDisable() {
     const emailValid = isEmailValid();
     document.getElementById("ButtonCadastrar").disabled = !emailValid;
 }

@@ -2,6 +2,9 @@ body{
     padding: 0;
     background-color: rgb(62, 62, 62);
 }
+
+
+
 .logo img{
     margin-left: 3%;
     width: 20%;
@@ -22,25 +25,26 @@ body{
     font-size: 150%;
     text-decoration: none;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    background-color: rgba(0, 0, 0, 0.452);
-    
+    background-color: rgba(0, 0, 0, 0.452);    
     margin: 0%;
     color: white;
-    
     border-radius: 2dvh;
     backdrop-filter: blur(22px) saturate(160%);
     -webkit-backdrop-filter: blur(22px) saturate(160%);
 }
+
 .btn-a:not(:first-child){
     margin-right: 30px;
-
 }
+
 .btn-a:hover {
     transform: translatex(-20px);
 }
+
 .btn-a:hover  .btn-a{
     left: 20px;
 }
+
 .vidro{
     display: grid;
     position: absolute;
@@ -60,6 +64,7 @@ body{
     backdrop-filter: blur(22px) saturate(160%);
     -webkit-backdrop-filter: blur(22px) saturate(160%);
 }
+
 .vidro2{
     position: absolute;
     top: 60%;           
@@ -76,6 +81,7 @@ body{
     backdrop-filter: blur(22px) saturate(160%);
     -webkit-backdrop-filter: blur(22px) saturate(160%);
 }
+
 .vidro3{
     position: absolute;
     top: 60%;           
@@ -92,21 +98,24 @@ body{
     backdrop-filter: blur(22px) saturate(160%);
     -webkit-backdrop-filter: blur(22px) saturate(160%);
 }
+
 .btns{
     display: grid;
     grid-template-columns: 75% 75%;
     margin-left: 20px;
 }
+
 button{
+    cursor: pointer;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     background-color: rgba(0, 0, 0, 0.452);
     color: white;
     margin-left: 12px;
     padding: 15px;
-    margin-top: 20px;
-    
+    margin-top: 20px;    
     border-radius: 10px;
 }
+
 input{
     background-color: rgba(0, 0, 0, 0.452);
     color: white;
@@ -118,7 +127,8 @@ input{
     backdrop-filter: blur(22px) saturate(160%);
     -webkit-backdrop-filter: blur(22px) saturate(160%);
 }
-p{
+
+label{
     margin-left: 40px;
     color: white;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;

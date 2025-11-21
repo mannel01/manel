@@ -1,6 +1,6 @@
 function ValidarCampos() {
-    const emailValid = isEmailValid();
-    document.getElementById("ButtonEntrar").disabled = !emailValid;
+    toogleEmailErrors();
+    toogleButtonsDisable();
 }
 
 function isEmailValid() {
@@ -11,8 +11,20 @@ function isEmailValid() {
     return ValidarEmail(Email);
 }
 
-function ValidarEmail(email) {
-    return /\S+@\S+\.\S+/.test(email);
+function toogleEmailErrors() {
+    const email = document.getElementById("email").value;
+    if(!email){
+        document.getElementById("email-invalido").style.display = "none";
+    } else if(ValidarEmail(email)){
+        document.getElementById("email-invalido").style.display = "none";
+    } else{
+        document.getElementById("email-invalido").style.display = "block";
+    }
+}
+
+function toogleButtonsDisable() {
+    const emailValid = isEmailValid();
+    document.getElementById("ButtonEntrar").disabled = !emailValid;
 }
 
 function Login() {
@@ -21,4 +33,8 @@ function Login() {
 
 function Admin() {
     window.location.href = "../Admins/Admin.html";
+}
+
+function ValidarEmail(email) {
+    return /\S+@\S+\.\S+/.test(email);
 }

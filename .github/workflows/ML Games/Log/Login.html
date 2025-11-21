@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ML Games</title>
     <link rel="stylesheet" href="Login.css">
+    <link rel="stylesheet" href="../Global.css">
 </head>
+
 <body>
     <!-- <div class="area-inicial">
         <div class="vidro">
@@ -20,16 +23,44 @@
         <img src="../Imgs/Samurai.jpeg" alt="">
         <button class="btn-a" onclick="Admin()">Add Admin</button>
         <div class="card">
+            <div>
                 <div><label>E-mail</label></div>
                 <input class="campo" type="email" id="email" onchange="ValidarCampos()">
+                <div class="error" id="email-invalido">E-mail inválido</div>
+            </div>
+            <div>
                 <div><label>Senha</label></div>
                 <input class="campo" type="password" name="Senha" id="senha">
-                <input type="checkbox" >
-                <button type="button" disabled="true" class="loginBotoes" id="ButtonEntrar" onclick="Login()">Entrar</button>
+                <input type="checkbox">
+            </div>
+            <button type="button" disabled="true" class="loginBotoes" id="ButtonEntrar"
+                onclick="Login()">Entrar</button>
         </div>
     </div>
-    
-    <script src="Login.js"></script>
-</body>
-</html>
 
+    <script src="Login.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/12.6.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/12.6.0/firebase-app-auth.js"></script>
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyBqPwsDh-fO1qnrj0FKB0V7iVil6C5yjoo",
+            authDomain: "ml-games-cffe5.firebaseapp.com",
+            projectId: "ml-games-cffe5",
+            storageBucket: "ml-games-cffe5.firebasestorage.app",
+            messagingSenderId: "659534740642",
+            appId: "1:659534740642:web:53fce2fed961754a2d2bfb",
+            measurementId: "G-2JJ14THJTS"
+        };
+        firebase.initializeApp(firebaseConfig);
+    
+        console.log("antes");
+        firebase.auth().signInWithEmailAndPassword("any@email.com", "123456").then(response => {
+            console.log("success", response)
+        }).catch(error => {
+            console.log("error", error)
+        });
+        console.log("depois");
+    </script>
+</body>
+
+</html>
