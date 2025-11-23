@@ -39,28 +39,7 @@
     </div>
 
     <script src="Login.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/12.6.0/firebase-app-compat.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/12.6.0/firebase-app-auth.js"></script>
-    <script>
-        const firebaseConfig = {
-            apiKey: "AIzaSyBqPwsDh-fO1qnrj0FKB0V7iVil6C5yjoo",
-            authDomain: "ml-games-cffe5.firebaseapp.com",
-            projectId: "ml-games-cffe5",
-            storageBucket: "ml-games-cffe5.firebasestorage.app",
-            messagingSenderId: "659534740642",
-            appId: "1:659534740642:web:53fce2fed961754a2d2bfb",
-            measurementId: "G-2JJ14THJTS"
-        };
-        firebase.initializeApp(firebaseConfig);
     
-        console.log("antes");
-        firebase.auth().signInWithEmailAndPassword("any@email.com", "123456").then(response => {
-            console.log("success", response)
-        }).catch(error => {
-            console.log("error", error)
-        });
-        console.log("depois");
-    </script>
 </body>
 
 </html>
