@@ -13,7 +13,7 @@ body{
     justify-content: space-between;
 }
 
-.btn-a{
+.btn-a, a{
     padding-top: 20%;
     text-align: center;
     box-shadow: rgba(0, 0, 0, 0.452) 10px;
@@ -102,7 +102,7 @@ body{
     margin-left: 20px;
 }
 
-button{
+button, a{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     background-color: rgba(0, 0, 0, 0.452);
     color: white;

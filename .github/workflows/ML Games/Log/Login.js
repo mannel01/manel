@@ -27,14 +27,6 @@ function toogleButtonsDisable() {
     document.getElementById("ButtonEntrar").disabled = !emailValid;
 }
 
-function Login() {
-    window.location.href = "../Home/Home.html";
-}
-
-function Admin() {
-    window.location.href = "../Admins/Admin.html";
-}
-
 function ValidarEmail(email) {
     return /\S+@\S+\.\S+/.test(email);
 }

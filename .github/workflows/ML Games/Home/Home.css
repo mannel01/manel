@@ -78,7 +78,7 @@ body{
     left: 40px;
 }
 
-.btn-avo{
+.btn-avo, a{
     
     box-shadow: rgba(0, 0, 0, 0.452) 10px;
     position: relative;
@@ -120,15 +120,15 @@ body{
     -webkit-backdrop-filter: blur(22px) saturate(160%);
 }
 
-.btn-avo:not(:first-child){
+.btn-avo:not(:first-child), a{
     margin-right: 60px;
 }
 
-.btn-avo:hover {
+.btn-avo:hover, a{
     transform: translatex(-10px);
 }
 
-.btn-avo:hover  .btn-a{
+.btn-avo:hover  .btn-a,a{
     left: 50px;
 }
 

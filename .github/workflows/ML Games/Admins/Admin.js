@@ -35,8 +35,3 @@ function ValidarEmail(email) {
     return /\S+@\S+\.\S+/.test(email);
 }
 
-
-function Login() {
-    window.location.href = "../Log/Login.html";
-}
-

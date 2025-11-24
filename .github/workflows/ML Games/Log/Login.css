@@ -42,7 +42,7 @@ body {
     border-radius: 10px;
 }
 
-.btn-a{
+.btn-a, a{
     cursor: pointer;
     padding-left: 0%;
     text-align: center;

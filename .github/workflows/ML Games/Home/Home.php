@@ -1,3 +1,10 @@
+<?php
+    session_start();
+    if(!isset($_SESSION['email']) == true and (!isset($_SESSION['senha']) == true)) {
+        header('Location: ../Log/Login.php');    
+    }
+    $logado = $_SESSION['email'];
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -10,10 +17,8 @@
     <div class="tela-inicial">
             
             <div class="vidro">
-                
-                <a href=""></a>
-                <button class="btn-a" onclick="Cliente()">Clientes</button>
-                <button class="btn-a" onclick="Game()">Games</button>
+                <a href="../Clients/Cliente.php"><button class="btn-a">Clientes</button></a>
+                <a href="../Games/Game.php"><button class="btn-a">Games</button></a>
                 <button class="btn-a" onclick="Compras()">Compras</button>
                 <button class="btn-a" onclick="Relatorio()">Relatório</button>
                 
@@ -24,7 +29,7 @@
                 <img src="../Imgs/ML Games.png" alt="">
             </div>
             <div class="btn-av">
-                <button class="btn-avo" onclick="Sair()">Sair</button>
+                <a href="../Log/Login.php"><button class="btn-avo">Sair</button></a>
             </div>
     </div>
 
