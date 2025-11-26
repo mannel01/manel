@@ -38,7 +38,6 @@
         </div>
     </div>
 
-    <script src="Home.js">
-        < /scriptst> <
-        /body> <
-        /html>
+
+    </body> 
+</html>
