@@ -16,7 +16,7 @@
     <div class="login">
         <img src="../Imgs/Samurai.jpeg" alt="">
 
-        <a href="../Admins/Admin.php"><button class="btn-a" type="button">Add Admin</button></a>
+        <a href="../Admins/Admin.php"><button class="btn-a" type="button">Cadastrar</button></a>
 
         <form class="card" method="POST" action="testLogin.php">
 

@@ -1,144 +1,148 @@
-body{
-    margin: 0px;
+/* Reset básico */
+body {
+    margin: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     background-color: dimgray;
 }
-.tela-produto{
+
+/* Container principal */
+.tela-produto {
     position: relative;
 }
-.tela-produto img{
-    position: relative;
+
+/* Gif de fundo */
+.tela-produto img {
     display: block;
     width: 100%;
-    height: 1000%;
-
-}
-.logo img{
-    position: absolute;
-    top: 10%;           
-    left: 5%;          
-    transform: translate(-50%, -50%);
-    margin-left: 3%;
-    height: 15%;
-    width: 10%;
-}
-.barra-tela-produto{
-    position: absolute;
-    top: 5%;           
-    left: 5%;          
-    transform: translate(-5%, -5%);
-    position: absolute;
-    display: grid;
-    grid-template-columns: 30% 10%;
-    justify-content: space-between;
+    height: auto;
 }
 
-.btn-a{
-    padding: 20px;
-    text-align: center;
-    box-shadow: rgba(0, 0, 0, 0.452) 10px;
-    transition: 0.6s;
+/* Logo no canto superior esquerdo */
+.logo img {
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    transform: translate(0, 0);
+    height: 60px;
+    width: auto;
+}
+
+/* Botão Voltar */
+.btn-a {
+    padding: 15px 25px;
     font-weight: bold;
-    font-size: 150%;
+    font-size: 1.5em;
     text-decoration: none;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    background-color: rgba(0, 0, 0, 0.452);
-    position: absolute; /* fica por cima */
-    top: 10%;           /* posição vertical */
-    left: 90%;          /* posição horizontal */
-    transform: translate(-50%, -50%); /* centraliza */
-    margin: 0%;
+    background-color: rgba(0, 0, 0, 0.45);
     color: white;
-    
     border-radius: 2dvh;
-    backdrop-filter: blur(22px) saturate(160%);
-    -webkit-backdrop-filter: blur(22px) saturate(160%);
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.45);
+    position: absolute;
+    top: 10%;
+    right: 5%;
+    cursor: pointer;
+    transition: transform 0.2s;
 }
 
 .btn-a:hover {
-    transform: translatex(-1px);
+    transform: scale(1.05);
 }
-.btn-a:hover  .btn-a{
-    left: 10px;
-}
-.vidro{
-    display: grid;
+
+/* Formulário centralizado */
+.vidro {
     position: absolute;
-    top: 50%;           
-    left: 5%;        
+    top: 50%;
+    left: 50%;
     transform: translate(-50%, -50%);
-    margin: 0%;
-    width: 14%;
-    padding-top: 2%;
-    padding-bottom: 3%;
-    padding-right: 10%;
-    padding-left: 20%;
-    border: 5px;
-    border-color: aliceblue;
+    display: grid;
+    width: 300px;
+    padding: 30px 25px;
     border-radius: 30px;
-    background-color: rgba(43, 43, 43, 0.278);
+    background-color: rgba(43, 43, 43, 0.28);
+    backdrop-filter: blur(22px) saturate(160%);
+}
+
+/* Inputs e Labels */
+.vidro p {
+    margin: 0 0 5px 0;
+    color: white;
+}
+
+.vidro input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 30px;
+    border: 1px solid #bbb;
+    background-color: rgba(0, 0, 0, 0.45);
+    color: white;
+    outline: none;
+}
+
+/* Botões do formulário */
+.btns {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+button {
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+    background-color: rgba(0, 0, 0, 0.45);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+
+
+/* Divs de efeito vidro secundárias */
+.vidro2, .vidro3 {
+    position: absolute;
+    border-radius: 30px;
+    background-color: rgba(43, 43, 43, 0.28);
     backdrop-filter: blur(22px) saturate(160%);
     -webkit-backdrop-filter: blur(22px) saturate(160%);
 }
-.vidro2{
-    position: absolute;
-    top: 60%;           
-    left: 65%;       
+
+.vidro2 {
+    top: 60%;
+    left: 65%;
     transform: translate(-50%, -50%);
-    margin: 0%;
+    width: 40%;
     padding: 10%;
     padding-top: 35%;
-    width: 40%;
-    border: 5px;
-    border-color: aliceblue;
-    border-radius: 30px;
-    background-color: rgba(43, 43, 43, 0.278);
-    backdrop-filter: blur(22px) saturate(160%);
-    -webkit-backdrop-filter: blur(22px) saturate(160%);
 }
-.vidro3{
-    position: absolute;
-    top: 60%;           
-    left: 65%;       
+
+.vidro3 {
+    top: 60%;
+    left: 65%;
     transform: translate(-50%, -50%);
-    margin: 0%;
+    width: 40%;
     padding: 9%;
     padding-top: 30%;
-    width: 40%;
-    border: 5px;
-    border-color: aliceblue;
-    border-radius: 30px;
-    background-color: rgba(43, 43, 43, 0.278);
-    backdrop-filter: blur(22px) saturate(160%);
-    -webkit-backdrop-filter: blur(22px) saturate(160%);
 }
-.btns{
-    display: grid;
-    grid-template-columns: 75% 75%;
-    margin-left: 20px;
-}
-button{
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    background-color: rgba(0, 0, 0, 0.452);
+
+/* Tabela de listagem */
+.table {
+    width: 100%;
+    border-collapse: collapse;
     color: white;
-    margin-left: 12px;
-    padding: 15px;
-    margin-top: 20px;
-    
-    border-radius: 10px;
 }
-input{
-    background-color: rgba(0, 0, 0, 0.452);
-    color: white;
-    margin-left: 40px;
-    width: 120%;
-    padding: 5%;
-    border: 5cap;
-    border-radius: 30px;
-    backdrop-filter: blur(22px) saturate(160%);
-    -webkit-backdrop-filter: blur(22px) saturate(160%);
+
+.table th, .table td {
+    padding: 10px;
+    text-align: left;
 }
-p{
-    margin-left: 40px;
-    color: white;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+.table th {
+    border-bottom: 2px solid white;
+}
+
+.table tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.05);
 }

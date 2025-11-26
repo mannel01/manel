@@ -1,0 +1,87 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url(../Imgs/Arvore\ Japonesa\ laranja.gif);
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+}
+
+/* BARRA SUPERIOR COM LOGO */
+.barra-superior {
+    width: 100%;
+    padding: 20px 40px;
+}
+
+.logo {
+    width: 160px;
+}
+
+/* CONTAINER CENTRAL */
+.container {
+    height: calc(100vh - 120px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* CARTÃO DO FORMULÁRIO */
+.card {
+    width: 380px;
+    padding: 30px;
+
+    background: rgba(40, 40, 40, 0.45);
+    backdrop-filter: blur(18px);
+    border-radius: 20px;
+
+    color: white;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.card h2 {
+    text-align: center;
+    margin-bottom: 10px;
+    font-size: 26px;
+}
+
+/* Inputs */
+.card input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+
+    background: rgba(0, 0, 0, 0.45);
+    border: none;
+    color: white;
+}
+
+/* Botões */
+.btn-editar {
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.18);
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.btn-editar:hover {
+    background: rgba(255, 255, 255, 0.28);
+}
+
+.btn-cancelar {
+    text-align: center;
+    padding: 12px;
+    border-radius: 12px;
+    background: rgba(255, 0, 0, 0.35);
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.btn-cancelar:hover {
+    background: rgba(255, 0, 0, 0.55);
+}
