@@ -35,7 +35,7 @@ body {
     position: absolute;
     top: 20%;
     left: 5%;
-
+    
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -51,21 +51,24 @@ body {
 }
 
 /* botões do menu lateral */
+a{
+    text-decoration: none;
+}
 
 .btn-a {
     text-decoration: none;
     width: 180px;
     padding: 18px;
-
+    
     border: none;
     border-radius: 18px;
 
     background: rgba(0, 0, 0, 0.35);
     color: white;
     font-size: 16px;
-    font-weight: bold;
+    
 
-    cursor: pointer;
+    
     transition: 0.2s;
 
     backdrop-filter: blur(6px);

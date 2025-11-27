@@ -125,9 +125,12 @@ $compras = $conexao->query($sqlCompras);
     </form>
 
     <div class="vidro3">
-        <h2>Lista de Compras</h2>
+        <div class="cad">
+                    <h2 class="ad">Lista de Compras</h2>
+        </div>
+        
 
-        <table border="1" class="tabela-compras">
+        <table border="1" class="table">
             <tr>
                 <th>ID</th>
                 <th>Cliente</th>
