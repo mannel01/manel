@@ -1,4 +1,4 @@
-<?php 
+<?php
 session_start();
 include_once(__DIR__ . "/../config.php");
 
@@ -31,7 +31,15 @@ if (isset($_POST['cadastrar'])) {
     exit;
 }
 
-$sql = "SELECT * FROM cliente ORDER BY idcliente DESC";
+if (!empty($_GET['search'])) {
+    $data = $_GET['search'];
+    $sql = "SELECT * FROM cliente 
+            WHERE nome LIKE '%$data%' 
+            ORDER BY idcliente DESC";
+} else {
+    $sql = "SELECT * FROM cliente ORDER BY idcliente DESC";
+}
+
 $result = $conexao->query($sql);
 ?>
 
@@ -81,7 +89,15 @@ $result = $conexao->query($sql);
 
         <label class="cl">Clientes</label>
 
-        <div class="vidro2"></div>
+        <!-- <div class="vidro2"></div> -->
+        <div class="box-search">
+            <input type="search" name="pesquisar" id="pesquisar" placeholder="Pesquisar">
+            <button onclick="searchData()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                    <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                </svg>
+            </button>
+        </div>
         <div class="vidro3">
             <table class="table">
                 <thead>
@@ -124,7 +140,19 @@ $result = $conexao->query($sql);
 
     </div>
 
-    <script src="Cliente.js"></script>
+    <script>
+        var search = document.getElementById('pesquisar');
+
+        search.addEventListener("keydown", function(event) {
+            if (event.key === "Enter") {
+                searchData();
+            }
+        });
+
+        function searchData() {
+            window.location = 'Cliente.php?search=' + search.value;
+        }
+    </script>
 
 </body>
 

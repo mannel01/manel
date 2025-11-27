@@ -8,12 +8,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ML Games</title>
     <link rel="stylesheet" href="Login.css">
-    <link rel="stylesheet" href="../Global.css">
 </head>
 
 <body>
 
     <div class="login">
+        
         <img src="../Imgs/Samurai.jpeg" alt="">
 
         <a href="../Admins/Admin.php"><button class="btn-a" type="button">Cadastrar</button></a>
@@ -37,7 +37,7 @@
 
     </div>
 
-    <script src="Login.js"></script>
+    
 
 </body>
 
