@@ -50,17 +50,19 @@ body {
    CONTAINER PRINCIPAL
 ================================ */
 .tela-admin {
+    top: 50%;
     display: flex;
     justify-content: center;
     align-items: flex-start;
     gap: 60px;
-    margin-top: 40px;
+    margin-top: 200px;
 }
 
 /* ================================
    FORMULÁRIO (ESQUERDA)
 ================================ */
 .vidro {
+    top: 50%;
     width: 350px;
     padding: 25px;
     background: rgba(0,0,0,0.45);
@@ -102,6 +104,51 @@ body {
 /* ================================
    CARD DA DIREITA (BUSCA + TABELA)
 ================================ */
+#p{
+    width: 70%;
+    padding: 10px;
+    
+    border-radius: 30px;
+    border: 1px solid #bbb;
+    background-color: rgba(0, 0, 0, 0.45);
+    color: white;
+    outline: none;
+
+}
+
+
+button {
+    margin: 2%;
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+    background-color: rgba(0, 0, 0, 0.45);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+.vidro4 {
+    position: absolute;
+    top: 27%;
+    right: 45%;
+    transform: translate(0, -50%);
+    width: 15%;
+    padding: 1%;
+    padding-right: 2%;
+    border-radius: 30px;
+    background-color: rgba(43, 43, 43, 0.28);
+    backdrop-filter: blur(22px) saturate(160%);
+    -webkit-backdrop-filter: blur(22px) saturate(160%);
+    color: white;
+    z-index: 10;
+}
+
 .vidro3 {
     width: 700px;
     padding: 25px;
@@ -157,6 +204,22 @@ body {
 /* ================================
    TABELA
 ================================ */
+#btn-ex{
+    
+    background-color: rgb(189, 0, 0);
+    border: 100px;
+    border-color: rgb(189, 0, 0);
+    border-top: 10%;
+    border-radius: 10%;
+}
+#btn-ed{
+    
+    background-color: rgb(9, 50, 147);
+    border: 100px;
+    border-color: rgb(9, 50, 147);
+    border-top: 10%;
+    border-radius: 10%;
+}
 .table {
     width: 100%;
     border-collapse: collapse;

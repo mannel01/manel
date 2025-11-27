@@ -53,12 +53,12 @@ body {
 .vidro {
     position: absolute;
     top: 50%;
-    left: 15%;   /* antes 25% — agora realmente esquerda */
+    left: 16%;   /* antes 25% — agora realmente esquerda */
     transform: translate(-50%, -50%);
     display: grid;
-    justify-content: flex-start;
+    
     width: 320px;
-    padding: 30px 25px;
+    padding: 30px 27px;
     border-radius: 30px;
     background-color: rgba(43, 43, 43, 0.28);
     backdrop-filter: blur(22px) saturate(160%);
@@ -74,7 +74,19 @@ body {
 }
 
 .vidro input {
-    width: 100%;
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 15px;
+    
+    border-radius: 30px;
+    border: 1px solid #bbb;
+    background-color: rgba(0, 0, 0, 0.45);
+    color: white;
+    outline: none;
+}
+
+#p{
+    width: 70%;
     padding: 10px;
     margin-bottom: 15px;
     border-radius: 30px;
@@ -82,6 +94,7 @@ body {
     background-color: rgba(0, 0, 0, 0.45);
     color: white;
     outline: none;
+
 }
 
 /* Botões do formulário */
@@ -93,6 +106,7 @@ body {
 }
 
 button {
+    margin: 2%;
     padding: 12px;
     border: none;
     border-radius: 12px;
@@ -115,6 +129,22 @@ button:hover {
     transform: translate(0, -50%);
     width: 45%;
     padding: 3%;
+    border-radius: 30px;
+    background-color: rgba(43, 43, 43, 0.28);
+    backdrop-filter: blur(22px) saturate(160%);
+    -webkit-backdrop-filter: blur(22px) saturate(160%);
+    color: white;
+    z-index: 10;
+}
+
+.vidro4 {
+    position: absolute;
+    top: 30%;
+    right: 40%;
+    transform: translate(0, -50%);
+    width: 13%;
+    padding: 2%;
+    padding-right: 1%;
     border-radius: 30px;
     background-color: rgba(43, 43, 43, 0.28);
     backdrop-filter: blur(22px) saturate(160%);
