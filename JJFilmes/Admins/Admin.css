@@ -1,0 +1,262 @@
+/* ================================
+   ESTILOS GERAIS
+================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: url("../Imgs/ArvoreJaponesaLaranja.gif");
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* ================================
+   BARRA SUPERIOR
+================================ */
+.barra-tela-admin {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+}
+
+.barra-tela-admin .logo img {
+    height: 70px;
+}
+
+.barra-tela-admin a {
+    color: white;
+    font-size: 18px;
+    text-decoration: none;
+    background: rgba(0,0,0,0.45);
+    padding: 10px 25px;
+    border-radius: 15px;
+    transition: 0.2s;
+}
+
+.barra-tela-admin a:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+/* ================================
+   CONTAINER PRINCIPAL
+================================ */
+.tela-admin {
+    top: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 60px;
+    margin-top: 200px;
+}
+
+/* ================================
+   FORMULÁRIO (ESQUERDA)
+================================ */
+.vidro {
+    top: 50%;
+    width: 350px;
+    padding: 25px;
+    background: rgba(0,0,0,0.45);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    color: white;
+}
+
+.vidro label {
+    font-size: 16px;
+}
+
+.vidro input {
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.15);
+    color: white;
+}
+
+#ButtonCadastrar {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 18px;
+    background: rgba(255,255,255,0.25);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#ButtonCadastrar:hover {
+    background: rgba(255,255,255,0.35);
+}
+
+/* ================================
+   CARD DA DIREITA (BUSCA + TABELA)
+================================ */
+#p{
+    width: 70%;
+    padding: 10px;
+    
+    border-radius: 30px;
+    border: 1px solid #bbb;
+    background-color: rgba(0, 0, 0, 0.45);
+    color: white;
+    outline: none;
+
+}
+
+
+button {
+    margin: 2%;
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+    background-color: rgba(0, 0, 0, 0.45);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+.vidro4 {
+    position: absolute;
+    top: 27%;
+    right: 45%;
+    transform: translate(0, -50%);
+    width: 15%;
+    padding: 1%;
+    padding-right: 2%;
+    border-radius: 30px;
+    background-color: rgba(43, 43, 43, 0.28);
+    backdrop-filter: blur(22px) saturate(160%);
+    -webkit-backdrop-filter: blur(22px) saturate(160%);
+    color: white;
+    z-index: 10;
+}
+
+.vidro3 {
+    width: 700px;
+    padding: 25px;
+    background: rgba(0,0,0,0.45);
+    border-radius: 20px;
+    color: white;
+    backdrop-filter: blur(10px);
+}
+
+/* Título */
+.cad {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.cad .ad {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* ================================
+   BUSCA (CORRIGIDA)
+================================ */
+.busca-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.busca-container input {
+    width: 250px;
+    padding: 10px 15px;
+    background: rgba(255,255,255,0.12);
+    border: none;
+    border-radius: 12px;
+    color: white;
+}
+
+.busca-container button {
+    margin-left: 8px;
+    padding: 10px 14px;
+    border: none;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.18);
+    cursor: pointer;
+}
+
+.busca-container button svg {
+    color: white;
+}
+
+/* ================================
+   TABELA
+================================ */
+#btn-ex{
+    
+    background-color: rgb(189, 0, 0);
+    border: 100px;
+    border-color: rgb(189, 0, 0);
+    border-top: 10%;
+    border-radius: 10%;
+}
+#btn-ed{
+    
+    background-color: rgb(9, 50, 147);
+    border: 100px;
+    border-color: rgb(9, 50, 147);
+    border-top: 10%;
+    border-radius: 10%;
+}
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    color: white;
+    font-size: 16px;
+}
+
+.table thead {
+    background: rgba(255,255,255,0.15);
+}
+
+.table thead th {
+    padding: 12px;
+}
+
+.table tbody tr {
+    background: rgba(255,255,255,0.08);
+}
+
+.table tbody tr:nth-child(even) {
+    background: rgba(255,255,255,0.12);
+}
+
+.table tbody tr td {
+    padding: 10px;
+}
+
+.table tbody tr:hover {
+    background: rgba(255,255,255,0.18);
+}
+
+.table svg {
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.table svg:hover {
+    transform: scale(1.15);
+}
