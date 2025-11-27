@@ -1,21 +1,11 @@
 body{
-    background-image: url(gfundo.gif);
+    background: url(../Imgs/download\ 1.png);
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    overflow: hidden;
 }
-.vidro2{
-    position: absolute;
-    top: 1%;       
-    transform: translate(-50%, -50%);
-    margin: 0%;
-    padding: 10%;
-    padding-top: 35%;
-    height: 109.9vh;
-    width: 178.9%;
-    border: 5px;
-    border-color: aliceblue;
-    background-color: rgba(43, 43, 43, 0.278);
-    backdrop-filter: blur(15px) saturate(160%);
-    -webkit-backdrop-filter: blur(10px) saturate(160%);
-}
+
 .vidro3{
     position: absolute;
     top: 50%;           

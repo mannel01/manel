@@ -22,10 +22,10 @@
     <div class="tela-inicial">
 
         <div class="vidro">
-            <a href="../Clients/Cliente.php"><button class="btn-a">Clientes</button></a>
-            <a href="../Games/Game.php"><button class="btn-a">Games</button></a>
-            <button class="btn-a" onclick="Compras()">Compras</button>
-            <button class="btn-a" onclick="Relatorio()">Relatório</button>
+            <a href="../Clients/Cliente.php" class="btn-a">Clientes</a>
+            <a href="../Games/Game.php" class="btn-a">Games</a>
+            <a href="../Cart/Compra.php" class="btn-a">Compras</a>
+            <a href="../Reports/Relatorio.php" class="btn-a">Relatório</a>
 
         </div>
 

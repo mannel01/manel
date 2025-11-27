@@ -53,6 +53,7 @@ body {
 /* botões do menu lateral */
 
 .btn-a {
+    text-decoration: none;
     width: 180px;
     padding: 18px;
 
