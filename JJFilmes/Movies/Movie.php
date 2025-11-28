@@ -83,6 +83,10 @@ $result = mysqli_query($conexao, $sql_select);
 
         <div class="vidro3">
             <table class="table">
+                <div class="cad">
+                <label class="ad">Filmes</label>
+            </div>
+
                 <thead>
                     <tr>
                         <th>ID</th>
