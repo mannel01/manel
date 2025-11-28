@@ -1,135 +1,268 @@
-body{
+* {
+    margin: 0;
     padding: 0;
-    background-color: rgb(62, 62, 62);
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
 }
-
-
-
-.logo img{
-    margin-left: 3%;
-    width: 20%;
+body{
+    margin: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background: url("../Imgs/Spiderman_Miles\ morales\ and\ gwen\ stacy.jpg") no-repeat center center fixed;
+    background-size: cover;
 }
-
-.barra-tela-cliente{
-    display: grid;
-    grid-template-columns: 30% 10%;
+.barra-tela-cliente {
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
     justify-content: space-between;
+    padding: 0 40px;
 }
 
-.btn-a{
-    padding-top: 20%;
-    text-align: center;
-    box-shadow: rgba(0, 0, 0, 0.452) 10px;
-    transition: 0.10s;
-    font-weight: bold;
-    font-size: 150%;
-    text-decoration: none;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    background-color: rgba(0, 0, 0, 0.452);    
-    margin: 0%;
-    color: white;
-    border-radius: 2dvh;
-    backdrop-filter: blur(22px) saturate(160%);
-    -webkit-backdrop-filter: blur(22px) saturate(160%);
+.barra-tela-cliente .logo img {
+    height: 70px;
 }
 
-.btn-a:not(:first-child){
-    margin-right: 30px;
+
+
+.barra-tela-cliente a:hover {
+    background: rgba(255,255,255,0.2);
 }
 
-.btn-a:hover {
-    transform: translatex(-20px);
+/* ================================
+   CONTAINER PRINCIPAL
+================================ */
+.tela-cliente {
+    top: 10%;
+    display: flex;
+    
+    align-items: flex-start;
+    gap: 60px;
+    margin-top: 20px;
 }
 
-.btn-a:hover  .btn-a{
-    left: 20px;
-}
-
-.vidro{
-    display: grid;
-    position: absolute;
-    top: 50%;           
-    left: 5%;       
-    transform: translate(-50%, -50%);
-    margin: 0%;
-    width: 14%;
-    padding-top: 2%;
-    padding-bottom: 3%;
-    padding-right: 10%;
-    padding-left: 20%;
-    border: 5px;
-    border-color: aliceblue;
-    border-radius: 30px;
-    background-color: rgba(43, 43, 43, 0.278);
-    backdrop-filter: blur(22px) saturate(160%);
-    -webkit-backdrop-filter: blur(22px) saturate(160%);
-}
-
-.vidro2{
-    position: absolute;
-    top: 60%;           
-    left: 65%;       
-    transform: translate(-50%, -50%);
-    margin: 0%;
-    padding: 10%;
-    padding-top: 35%;
-    width: 40%;
-    border: 5px;
-    border-color: aliceblue;
-    border-radius: 30px;
-    background-color: rgba(43, 43, 43, 0.278);
-    backdrop-filter: blur(22px) saturate(160%);
-    -webkit-backdrop-filter: blur(22px) saturate(160%);
-}
-
-.vidro3{
-    position: absolute;
-    top: 60%;           
-    left: 65%;       
-    transform: translate(-50%, -50%);
-    margin: 0%;
-    padding: 9%;
-    padding-top: 30%;
-    width: 40%;
-    border: 5px;
-    border-color: aliceblue;
-    border-radius: 30px;
-    background-color: rgba(43, 43, 43, 0.278);
-    backdrop-filter: blur(22px) saturate(160%);
-    -webkit-backdrop-filter: blur(22px) saturate(160%);
-}
-
-.btns{
-    display: grid;
-    grid-template-columns: 75% 75%;
-    margin-left: 20px;
-}
-
-button{
-    cursor: pointer;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    background-color: rgba(0, 0, 0, 0.452);
-    color: white;
-    margin-left: 12px;
-    padding: 15px;
-    margin-top: 20px;    
+/* ================================
+   FORMULÁRIO (ESQUERDA)
+================================ */
+.camp{
+    width: 70%;
+    padding: 10px;
     border-radius: 10px;
+    
+    color: white;
+}
+.camp-s{
+    
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.45);
+    color: white;
+}
+.vidro {
+    margin-top: 10%;
+    top: 50%;
+    width: 350px;
+    padding: 25px;
+    background: rgba(0,0,0,0.45);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    color: white;
 }
 
-input{
-    background-color: rgba(0, 0, 0, 0.452);
+.vidro label {
+    padding-bottom: 10%;
+    margin: 3%;
+    margin-bottom: 10%;
+    font-size: 16px;
+}
+
+.vidro input {
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+    background: rgba(0,0,0,0.45);
     color: white;
-    margin-left: 40px;
-    width: 120%;
-    padding: 5%;
-    border: 5cap;
+}
+
+#ButtonCadastrar {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 18px;
+    background: rgba(0,0,0,0.45);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#ButtonCadastrar:hover {
+   background: rgba(0,0,0,0.45);
+}
+
+/* ================================
+   CARD DA DIREITA (BUSCA + TABELA)
+================================ */
+#p{
+    width: 70%;
+    padding: 10px;
     border-radius: 30px;
+    background-color: rgba(0, 0, 0, 0.45);
+    color: white;
+}
+
+
+button {
+   
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+    background-color: rgba(0, 0, 0, 0.45);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+.vidro4 {
+    position: absolute;
+    top: 27%;
+    right: 55%;
+    transform: translate(0, -50%);
+    width: 14%;
+    padding: 1%;
+    padding-right: 2%;
+    border-radius: 30px;
+    background: rgba(0,0,0,0.45);
     backdrop-filter: blur(22px) saturate(160%);
     -webkit-backdrop-filter: blur(22px) saturate(160%);
+    color: white;
+    z-index: 10;
 }
 
-label{
-    margin-left: 40px;
+.vidro3 {
+    position: absolute;
+    top: 70%;
+    right: 20%;
+    transform: translate(0, -50%);
+    width: 50%;
+    padding: 1%;
+    padding-bottom: 30%;
+    padding-right: 2%;
+    border-radius: 30px;
+    background: rgba(0,0,0,0.45);
+    
+    backdrop-filter: blur(22px) saturate(160%);
+    -webkit-backdrop-filter: blur(22px) saturate(160%);
     color: white;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    z-index: 10;
+}
+
+/* Título */
+.cad {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.cad .ad {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* ================================
+   BUSCA (CORRIGIDA)
+================================ */
+.busca-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.busca-container input {
+    width: 250px;
+    padding: 10px 15px;
+    background: rgba(255,255,255,0.12);
+    border: none;
+    border-radius: 12px;
+    color: white;
+}
+
+.busca-container button {
+    margin-left: 8px;
+    padding: 10px 14px;
+    border: none;
+    border-radius: 12px;
+    background: rgba(255,255,255,0.18);
+    cursor: pointer;
+}
+
+.busca-container button svg {
+    color: white;
+}
+
+/* ================================
+   TABELA
+================================ */
+#btn-ex{
+    
+    background-color: rgb(189, 0, 0);
+    border: 100px;
+    border-color: rgb(189, 0, 0);
+    border-top: 10%;
+    border-radius: 10%;
+}
+#btn-ed{
+    
+    background-color: rgb(9, 50, 147);
+    border: 100px;
+    border-color: rgb(9, 50, 147);
+    border-top: 10%;
+    border-radius: 10%;
+}
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    color: white;
+    font-size: 16px;
+}
+
+.table thead {
+    background: rgba(255,255,255,0.15);
+}
+
+.table thead th {
+    padding: 12px;
+}
+
+.table tbody tr {
+    background: rgba(255,255,255,0.08);
+}
+
+.table tbody tr:nth-child(even) {
+    background: rgba(255,255,255,0.12);
+}
+
+.table tbody tr td {
+    padding: 10px;
+}
+
+.table tbody tr:hover {
+    background: rgba(255,255,255,0.18);
+}
+
+.table svg {
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.table svg:hover {
+    transform: scale(1.15);
 }

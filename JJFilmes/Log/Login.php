@@ -12,7 +12,7 @@
 
     <div class="login">
         
-        <img src="../Imgs/Samurai.jpeg" alt="">
+        <img src="../Imgs/city.jpg" alt="">
 
         <a href="../Admins/Admin.php"><button class="btn-a" type="button">Cadastrar</button></a>
 

@@ -9,7 +9,7 @@
 }
 
 body {
-    background: url("../Imgs/ArvoreJaponesaLaranja.gif");
+    background: url("../Imgs/My\ Neighbor\ Totoro\ -\ RGZNSK\ _.gif");
     background-size: cover;
     background-position: center;
     height: 100vh;
@@ -142,7 +142,7 @@ button:hover {
     padding: 1%;
     padding-right: 2%;
     border-radius: 30px;
-    background-color: rgba(43, 43, 43, 0.28);
+    background: rgba(0,0,0,0.45);
     backdrop-filter: blur(22px) saturate(160%);
     -webkit-backdrop-filter: blur(22px) saturate(160%);
     color: white;
@@ -205,7 +205,8 @@ button:hover {
    TABELA
 ================================ */
 #btn-ex{
-    
+    text-decoration: none;
+    color: white;
     background-color: rgb(189, 0, 0);
     border: 100px;
     border-color: rgb(189, 0, 0);
