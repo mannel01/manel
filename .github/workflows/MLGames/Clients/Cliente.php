@@ -58,7 +58,7 @@ $result = $conexao->query($sql);
 
     <div class="barra-tela-cliente">
         <div class="logo"><img src="../Imgs/ML Games.png" alt=""></div>
-        <a href="../Home/Home.php"><button type="button" class="btn-a" onclick="Home()">Voltar</button></a>
+        <a href="../Home/Home.php"><button type="button"  onclick="Home()">Voltar</button></a>
     </div>
 
     <div class="tela-cliente">
@@ -67,7 +67,7 @@ $result = $conexao->query($sql);
 
             <div>
                 <label for="idnome">Nome</label>
-                <input type="text" name="nome" id="idnome" placeholder="Nome" required>
+                <input type="text" name="nome"  placeholder="Nome" required>
             </div>
 
             <div>
@@ -87,11 +87,11 @@ $result = $conexao->query($sql);
             </div>
         </form>
 
-        <label class="cl">Clientes</label>
+        
 
         <!-- <div class="vidro2"></div> -->
-        <div class="box-search">
-            <input type="search" name="pesquisar" id="pesquisar" placeholder="Pesquisar">
+        <div class="vidro4">
+            <input type="search" name="pesquisar" id="p" placeholder="Pesquisar">
             <button onclick="searchData()">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                     <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
@@ -99,6 +99,9 @@ $result = $conexao->query($sql);
             </button>
         </div>
         <div class="vidro3">
+               <div class="cad">
+                    <h2 class="ad">Cliente</h2>
+        </div>
             <table class="table">
                 <thead>
                     <tr>

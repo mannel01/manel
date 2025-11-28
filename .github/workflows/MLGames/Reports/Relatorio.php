@@ -249,18 +249,20 @@ if ($filtro) {
 </head>
 <body>
     
-    <div class="logo"><img src="../Imgs/ML Games.png" alt=""></div>
-    <a href="../Home/Home.php" class="btn-a">Voltar</a>
+    <div class="barra-tela-relatorio">
+        <div class="logo"><img src="../Imgs/ML Games.png" alt=""></div>
+        <a href="../Home/Home.php" class="btn-a">Voltar</a>
+    </div>
 
     <!-- FORMULÁRIO -->
     <form class="vidro" method="POST" action="Relatorio.php">
 
-        <div>
+        <div class="camp">
             <label for="filtro">Selecione o filtro:</label>
-            <select name="filtro" id="filtro" required>
+            <select class="camp-s" name="filtro" id="filtro" required>
                 <option value="">Selecione...</option>
 
-                <option value="total_cliente">Total de compras por cliente</option>
+                <option class="cam-s" value="total_cliente">Total de compras por cliente</option>
                 <option value="total_jogo">Total de compras por jogo</option>
                 <option value="valor_total">Valor total vendido</option>
 

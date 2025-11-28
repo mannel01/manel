@@ -49,6 +49,15 @@ body {
     transform: scale(1.05);
 }
 
+.cad {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.cad .ad {
+    font-size: 28px;
+    font-weight: bold;
+}
 /* Formulário centralizado */
 .vidro {
     position: absolute;
@@ -79,7 +88,7 @@ body {
     margin-bottom: 15px;
     
     border-radius: 30px;
-    border: 1px solid #bbb;
+    
     background-color: rgba(0, 0, 0, 0.45);
     color: white;
     outline: none;
@@ -90,7 +99,6 @@ body {
     padding: 10px;
     margin-bottom: 15px;
     border-radius: 30px;
-    border: 1px solid #bbb;
     background-color: rgba(0, 0, 0, 0.45);
     color: white;
     outline: none;
@@ -123,13 +131,15 @@ button:hover {
 
 /* Área da tabela */
 .vidro3 {
+    
     position: absolute;
-    top: 50%;
+    top: 70%;
     right: 5%;
     transform: translate(0, -50%);
     width: 45%;
     padding: 3%;
-    border-radius: 30px;
+    padding-bottom: 20%;
+    border-radius: 20px;
     background-color: rgba(43, 43, 43, 0.28);
     backdrop-filter: blur(22px) saturate(160%);
     -webkit-backdrop-filter: blur(22px) saturate(160%);
@@ -142,9 +152,9 @@ button:hover {
     top: 30%;
     right: 40%;
     transform: translate(0, -50%);
-    width: 13%;
-    padding: 2%;
-    padding-right: 1%;
+    
+    padding: 1%;
+    padding-right: 0%;
     border-radius: 30px;
     background-color: rgba(43, 43, 43, 0.28);
     backdrop-filter: blur(22px) saturate(160%);

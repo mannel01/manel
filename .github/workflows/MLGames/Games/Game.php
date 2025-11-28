@@ -83,6 +83,9 @@ $result = mysqli_query($conexao, $sql_select);
         
 
         <div class="vidro3">
+            <div class="cad">
+                <label class="ad">Jogos</label>
+            </div>
             <table class="table">
                 <thead>
                     <tr>

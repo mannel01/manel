@@ -52,6 +52,20 @@ body{
 /* ================================
    FORMULÁRIO (ESQUERDA)
 ================================ */
+.camp{
+    width: 70%;
+    padding: 10px;
+    border-radius: 10px;
+    
+    color: white;
+}
+.camp-s{
+    
+    padding: 10px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.45);
+    color: white;
+}
 .vidro {
     margin-top: 10%;
     top: 90%;
@@ -64,8 +78,9 @@ body{
 }
 
 .vidro label {
-    padding: 10%;
+    padding-bottom: 10%;
     margin: 3%;
+    margin-bottom: 10%;
     font-size: 16px;
 }
 
@@ -76,7 +91,7 @@ body{
     padding: 12px;
     border: none;
     border-radius: 12px;
-    background: rgba(255,255,255,0.15);
+    background: rgba(0,0,0,0.45);
     color: white;
 }
 
@@ -85,14 +100,14 @@ body{
     padding: 12px;
     border: none;
     border-radius: 18px;
-    background: rgba(255,255,255,0.25);
+    background: rgba(0,0,0,0.45);
     color: white;
     font-size: 16px;
     cursor: pointer;
 }
 
 #ButtonCadastrar:hover {
-    background: rgba(255,255,255,0.35);
+   background: rgba(0,0,0,0.45);
 }
 
 /* ================================
@@ -101,18 +116,14 @@ body{
 #p{
     width: 70%;
     padding: 10px;
-    
     border-radius: 30px;
-    border: 1px solid #bbb;
     background-color: rgba(0, 0, 0, 0.45);
     color: white;
-    outline: none;
-
 }
 
 
 button {
-    margin: 2%;
+   
     padding: 12px;
     border: none;
     border-radius: 12px;
@@ -130,13 +141,13 @@ button:hover {
 .vidro4 {
     position: absolute;
     top: 27%;
-    right: 45%;
+    right: 55%;
     transform: translate(0, -50%);
-    width: 15%;
+    width: 14%;
     padding: 1%;
     padding-right: 2%;
     border-radius: 30px;
-    background-color: rgba(43, 43, 43, 0.28);
+    background: rgba(0,0,0,0.45);
     backdrop-filter: blur(22px) saturate(160%);
     -webkit-backdrop-filter: blur(22px) saturate(160%);
     color: white;
@@ -145,7 +156,7 @@ button:hover {
 
 .vidro3 {
     position: absolute;
-    top: 50%;
+    top: 70%;
     right: 20%;
     transform: translate(0, -50%);
     width: 50%;
