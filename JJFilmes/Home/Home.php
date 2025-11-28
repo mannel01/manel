@@ -31,7 +31,7 @@
 
 
         <div class="vidro2">
-            <img src="../Imgs/ML Games.png" alt="">
+            <img src="../Imgs/" alt="">
         </div>
         <div class="btn-av">
             <a href="Sair.php"><button class="btn-avo">Sair</button></a>
