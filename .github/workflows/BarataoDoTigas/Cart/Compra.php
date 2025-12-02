@@ -16,16 +16,16 @@ if (!$admin_id) {
 if (isset($_POST['cadastrar'])) {
 
     $cliente = $_POST['cliente'];
-    $jogo = $_POST['jogo'];
+    $produto = $_POST['produto'];
     $datacompra = $_POST['datacompra'];
     $valortotal = $_POST['valortotal'];
     $nomecliente = $_POST['nomecliente'];
-    $nomejogo = $_POST['nomejogo'];
+    $nomeproduto = $_POST['nomeproduto'];
 
-    if (!empty($cliente) && !empty($jogo) && !empty($datacompra) && !empty($valortotal)) {
+    if (!empty($cliente) && !empty($produto) && !empty($datacompra) && !empty($valortotal)) {
 
         $sql = "INSERT INTO compra 
-        (datacompra, valorcompra, cliente_idcliente, game_idgame, admin_idadmin, nome_cliente, nome_jogo)
+        (datacompra, valorcompra, cliente_idcliente, produto_idproduto, admin_idadmin, nome_cliente, nome_produto)
         VALUES (?, ?, ?, ?, ?, ?, ?)";
 
         $stmt = $conexao->prepare($sql);
@@ -35,10 +35,10 @@ if (isset($_POST['cadastrar'])) {
             $datacompra,
             $valortotal,
             $cliente,
-            $jogo,
+            $produto,
             $admin_id,
             $nomecliente,
-            $nomejogo
+            $nomeproduto
         );
 
         if (!$stmt->execute()) {
@@ -57,7 +57,7 @@ if (isset($_POST['cadastrar'])) {
 $sqlClientes = "SELECT idcliente, nome FROM cliente ORDER BY nome";
 $clientes = $conexao->query($sqlClientes);
 
-$sqlJogos = "SELECT idgame, nome, preco FROM game ORDER BY nome";
+$sqlJogos = "SELECT idproduto, nome, preco FROM produto ORDER BY nome";
 $jogos = $conexao->query($sqlJogos);
 
 /* =============================
@@ -74,7 +74,7 @@ $compras = $conexao->query($sqlCompras);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ML games</title>
+    <title>Baratão do Tigas</title>
     <link rel="stylesheet" href="Compra.css">
 </head>
 
@@ -99,12 +99,12 @@ $compras = $conexao->query($sqlCompras);
         </div>
 
         <div>
-            <label for="jogo">Selecione o jogo:</label>
-            <select name="jogo" id="jogo" required>
+            <label for="jogo">Selecione o produto:</label>
+            <select name="produto" id="produto" required>
                 <option value="">Selecione...</option>
 
-                <?php while ($j = $jogos->fetch_assoc()) { ?>
-                    <option value="<?= $j['idgame'] ?>" data-preco="<?= $j['preco'] ?>"><?= $j['nome'] ?></option>
+                <?php while ($p = $produtos->fetch_assoc()) { ?>
+                    <option value="<?= $p['idproduto'] ?>" data-preco="<?= $p['preco'] ?>"><?= $p['nome'] ?></option>
                 <?php } ?>
             </select>
         </div>
@@ -116,7 +116,7 @@ $compras = $conexao->query($sqlCompras);
 
         <input type="hidden" name="valortotal" id="valortotal">
         <input type="hidden" name="nomecliente" id="nomecliente">
-        <input type="hidden" name="nomejogo" id="nomejogo">
+        <input type="hidden" name="nomeproduto" id="nomeproduto">
 
         <div class="btns">
             <button type="submit" name="cadastrar" id="ButtonCadastrar">Cadastrar</button>
@@ -131,7 +131,7 @@ $compras = $conexao->query($sqlCompras);
             <tr>
                 <th>ID</th>
                 <th>Cliente</th>
-                <th>Jogo</th>
+                <th>Produto</th>
                 <th>Data</th>
                 <th>Valor</th>
                 <th>Ações</th>
@@ -141,7 +141,7 @@ $compras = $conexao->query($sqlCompras);
                 <tr>
                     <td><?= $compra['idcompra'] ?></td>
                     <td><?= $compra['nome_cliente'] ?></td>
-                    <td><?= $compra['nome_jogo'] ?></td>
+                    <td><?= $compra['nome_produto'] ?></td>
                     <td><?= $compra['datacompra'] ?></td>
                     <td>R$ <?= number_format($compra['valorcompra'], 2, ',', '.') ?></td>
                     <td>
@@ -161,21 +161,18 @@ $compras = $conexao->query($sqlCompras);
         </table>
     </div>
 
-    <!-- SCRIPT CORRIGIDO -->
     <script>
         document.getElementById("cliente").addEventListener("change", function() {
             document.getElementById("nomecliente").value =
                 this.options[this.selectedIndex].text;
         });
 
-        document.getElementById("jogo").addEventListener("change", function() {
+        document.getElementById("produto").addEventListener("change", function() {
             let option = this.options[this.selectedIndex];
-            document.getElementById("nomejogo").value = option.text;
+            document.getElementById("nomeproduto").value = option.text;
             document.getElementById("valortotal").value =
                 option.getAttribute("data-preco");
         });
     </script>
-
 </body>
-
 </html>

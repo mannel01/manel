@@ -10,41 +10,40 @@ if (!$admin_id) {
     exit;
 }
 
-// Valida ID do game
+// Valida ID do produto
 if (!isset($_GET['id'])) {
-    header("Location: Movie.php");
+    header("Location: Produto.php");
     exit;
 }
 
-$idfilme = intval($_GET['id']);
+$idproduto = intval($_GET['id']);
 
-// Busca dados do game
-$sql = "SELECT * FROM filme WHERE idfilme = $idfilme LIMIT 1";
+// Busca dados do produto
+$sql = "SELECT * FROM produto WHERE idproduto = $idproduto LIMIT 1";
 $result = mysqli_query($conexao, $sql);
 
 if (mysqli_num_rows($result) === 0) {
-    header("Location: Movie.php");
+    header("Location: Produto.php");
     exit;
 }
 
-$movie = mysqli_fetch_assoc($result);
+$produto = mysqli_fetch_assoc($result);
 
-// Atualizar game
+// Atualizar produto
 if (isset($_POST['editar'])) {
 
-    $titulo = $_POST['titulo'];
-    $genero = $_POST['genero'];
+    $nome = $_POST['titulo'];
     $preco = $_POST['preco'];
 
     $update = "
-        UPDATE filme 
-        SET titulo='$titulo', genero='$genero', preco='$preco', admin_idadmin=$admin_id
-        WHERE idfilme=$idfilme
+        UPDATE produto 
+        SET nome='$nome', preco='$preco', admin_idadmin=$admin_id
+        WHERE idproduto=$idproduto
     ";
 
     mysqli_query($conexao, $update);
 
-    header("Location: Movie.php");
+    header("Location: Produto.php");
     exit;
 }
 
@@ -56,8 +55,8 @@ if (isset($_POST['editar'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editar Filme</title>
-    <link rel="stylesheet" href="EditMovie.css">
+    <title>Editar Produto</title>
+    <link rel="stylesheet" href="EditProduto.css">
 </head>
 
 <body>
@@ -74,25 +73,19 @@ if (isset($_POST['editar'])) {
 
         <form class="vidro" method="POST">
 
-            <h2 class="titulo">Editar Game</h2>
+            <h2 class="titulo">Editar Produto</h2>
 
             <p>Título</p>
-            <input type="text" name="titulo" value="<?= $movie['titulo'] ?>" required>
-
-            <p>Gênero</p>
-            <input type="text" name="genero" value="<?= $movie['genero'] ?>" required>
+            <input type="text" name="nome" value="<?= $produto['nome'] ?>" required>
 
             <p>Preço</p>
-            <input type="text" name="preco" value="<?= $movie['preco'] ?>" required>
+            <input type="text" name="preco" value="<?= $produto['preco'] ?>" required>
 
             <div class="btns">
                 <button type="submit" name="editar">Salvar Alterações</button>
-                <a href="Movie.php" class="btn-cancelar">Cancelar</a>
+                <a href="Produto.php" class="btn-cancelar">Cancelar</a>
             </div>
-
         </form>
-
     </div>
-
 </body>
 </html>

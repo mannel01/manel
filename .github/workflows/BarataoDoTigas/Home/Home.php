@@ -23,7 +23,7 @@
 
         <div class="vidro">
             <a href="../Clients/Client.php" class="btn-a">Clientes</a>
-            <a href="../Movies/Movie.php" class="btn-a">Filmes</a>
+            <a href="../Products/Produto.php" class="btn-a">Produtos</a>
             <a href="../Cart/Compra.php" class="btn-a">Compras</a>
             <a href="../Reports/Relatorio.php" class="btn-a">Relatório</a>
 

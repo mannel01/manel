@@ -1,9 +1,9 @@
 <?php
 
     $dbHost = 'Localhost';
-    $dbUsername = 'root';
-    $dbPassword = 'josenha';
-    $dbName = 'dbjjfilmes';
+    $dbUsername = 'manel';
+    $dbPassword = '130708mN';
+    $dbName = 'dbmercadinho';
 
     $conexao = new mysqli($dbHost, $dbUsername, $dbPassword, $dbName);
 ?>

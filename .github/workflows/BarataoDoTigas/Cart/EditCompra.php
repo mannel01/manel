@@ -40,8 +40,8 @@ $compra = $result->fetch_assoc();
 $sqlClientes = "SELECT idcliente, nome FROM cliente ORDER BY nome";
 $clientes = $conexao->query($sqlClientes);
 
-$sqlJogos = "SELECT idgame, nome, preco FROM game ORDER BY nome";
-$jogos = $conexao->query($sqlJogos);
+$sqlProdutos = "SELECT idproduto, nome, preco FROM produto ORDER BY nome";
+$sqlProdutos = $conexao->query($sqlProdutos);
 
 /* ======================================================
    ATUALIZAR COMPRA
@@ -49,23 +49,23 @@ $jogos = $conexao->query($sqlJogos);
 if (isset($_POST['atualizar'])) {
 
     $cliente = $_POST['cliente'];
-    $jogo = $_POST['jogo'];
+    $produto = $_POST['produto'];
     $data = $_POST['datacompra'];
     $valor = $_POST['valortotal'];
     $nomecliente = $_POST['nomecliente'];
-    $nomejogo = $_POST['nomejogo'];
+    $nomeproduto = $_POST['nomeproduto'];
 
     $sqlUp = "UPDATE compra SET 
                 datacompra = ?, 
                 valorcompra = ?, 
                 cliente_idcliente = ?, 
-                game_idgame = ?, 
+                produto_idproduto = ?, 
                 nome_cliente = ?, 
-                nome_jogo = ?
+                nome_produto = ?
               WHERE idcompra = ?";
 
     $stmtUp = $conexao->prepare($sqlUp);
-    $stmtUp->bind_param("sdisssi", $data, $valor, $cliente, $jogo, $nomecliente, $nomejogo, $idcompra);
+    $stmtUp->bind_param("sdisssi", $data, $valor, $cliente, $produto, $nomecliente, $nomeproduto, $idcompra);
 
     if (!$stmtUp->execute()) {
         die("Erro ao atualizar: " . $stmtUp->error);
@@ -95,7 +95,7 @@ if (isset($_POST['atualizar'])) {
 
     <form class="vidro" method="POST">
 
-        <!-- CLIENTE -->
+
         <label for="cliente">Cliente:</label>
         <select name="cliente" id="cliente" required>
             <?php while ($c = $clientes->fetch_assoc()) { ?>
@@ -106,13 +106,13 @@ if (isset($_POST['atualizar'])) {
             <?php } ?>
         </select>
 
-        <!-- JOGO -->
-        <label for="jogo">Jogo:</label>
-        <select name="jogo" id="jogo" required>
-            <?php while ($j = $jogos->fetch_assoc()) { ?>
-                <option value="<?= $j['idgame'] ?>"
+        
+        <label for="produto">Produto:</label>
+        <select name="produto" id="produto" required>
+            <?php while ($p = $produtos->fetch_assoc()) { ?>
+                <option value="<?= $j['idproduto'] ?>"
                     data-preco="<?= $j['preco'] ?>"
-                    <?= ($j['idgame'] == $compra['game_idgame']) ? "selected" : "" ?>>
+                    <?= ($j['idproduto'] == $compra['produto_idproduto']) ? "selected" : "" ?>>
                     <?= $j['nome'] ?>
                 </option>
             <?php } ?>
@@ -122,10 +122,10 @@ if (isset($_POST['atualizar'])) {
         <input type="date" name="datacompra" id="datacompra"
                value="<?= $compra['datacompra'] ?>" required>
 
-        <!-- CAMPOS OCULTOS -->
+
         <input type="hidden" name="valortotal" id="valortotal" value="<?= $compra['valorcompra'] ?>">
         <input type="hidden" name="nomecliente" id="nomecliente" value="<?= $compra['nome_cliente'] ?>">
-        <input type="hidden" name="nomejogo" id="nomejogo" value="<?= $compra['nome_jogo'] ?>">
+        <input type="hidden" name="nomeproduto" id="nomeproduto" value="<?= $compra['nome_produto'] ?>">
 
         <div class="btns">
             <button type="submit" name="atualizar" class="btn-success">Salvar Alterações</button>
@@ -134,22 +134,20 @@ if (isset($_POST['atualizar'])) {
 
     </form>
 
-    <!-- Script para preencher automaticamente -->
+
     <script>
-        // Cliente → Preencher nome automaticamente
+        
         document.getElementById("cliente").addEventListener("change", function () {
             document.getElementById("nomecliente").value =
                 this.options[this.selectedIndex].text;
         });
 
-        // Jogo → Preencher nome e preço automaticamente
-        document.getElementById("jogo").addEventListener("change", function () {
+        
+        document.getElementById("produto").addEventListener("change", function () {
             let op = this.options[this.selectedIndex];
-            document.getElementById("nomejogo").value = op.text;
+            document.getElementById("nomeproduto").value = op.text;
             document.getElementById("valortotal").value = op.getAttribute("data-preco");
         });
     </script>
-
 </body>
-
 </html>

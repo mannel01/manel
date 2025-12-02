@@ -38,21 +38,21 @@ if ($filtro) {
             break;
 
         /* =======================================================
-           2 — TOTAL DE COMPRAS POR JOGO
+           2 — TOTAL DE COMPRAS POR PRODUTO
         ======================================================== */
-        case "total_filme":
-            $sql = "SELECT titulo_filme AS filme, COUNT(*) AS total
+        case "total_produto":
+            $sql = "SELECT nome_produto AS produto, COUNT(*) AS total
                     FROM compra
-                    GROUP BY titulo_filme
+                    GROUP BY nome_produto
                     ORDER BY valortotal DESC";
             $resultado = $conexao->query($sql);
 
-            $resultado_html = "<h2>Total de compras por filme</h2>";
-            $resultado_html .= "<table border='1'><tr><th>Filme</th><th>Total</th></tr>";
+            $resultado_html = "<h2>Total de compras por produto</h2>";
+            $resultado_html .= "<table border='1'><tr><th>Produto</th><th>Total</th></tr>";
 
             while ($r = $resultado->fetch_assoc()) {
                 $resultado_html .= "<tr>
-                                        <td>{$r['filme']}</td>
+                                        <td>{$r['produto']}</td>
                                         <td>{$r['total']}</td>
                                     </tr>";
             }
@@ -77,7 +77,7 @@ if ($filtro) {
            4 — LISTAR TODAS AS COMPRAS POR CLIENTE
         ======================================================== */
         case "compras_cliente":
-            $sql = "SELECT nome_cliente, titulo_filme, valortotal, datacompra
+            $sql = "SELECT nome_cliente, nome_produto, valortotal, datacompra
                     FROM compra ORDER BY nome_cliente, datacompra DESC";
 
             $resultado = $conexao->query($sql);
@@ -86,7 +86,7 @@ if ($filtro) {
             $resultado_html .= "<table border='1'>
                                 <tr>
                                     <th>Cliente</th>
-                                    <th>Filme</th>
+                                    <th>Produto</th>
                                     <th>Valor</th>
                                     <th>Data</th>
                                 </tr>";
@@ -96,7 +96,7 @@ if ($filtro) {
 
                 $resultado_html .= "<tr>
                                         <td>{$r['nome_cliente']}</td>
-                                        <td>{$r['titulo_filme']}</td>
+                                        <td>{$r['nome_produto']}</td>
                                         <td>R$ {$valor}</td>
                                         <td>{$r['datacompra']}</td>
                                     </tr>";
@@ -106,18 +106,18 @@ if ($filtro) {
             break;
 
         /* =======================================================
-           5 — LISTAR TODAS AS COMPRAS POR JOGO
+           5 — LISTAR TODAS AS COMPRAS POR PRODUTO
         ======================================================== */
-        case "compras_filme":
-            $sql = "SELECT titulo_filme, nome_cliente, valortotal, datacompra
-                    FROM compra ORDER BY titulo_filme, datacompra DESC";
+        case "compras_produto":
+            $sql = "SELECT nome_produto, nome_cliente, valortotal, datacompra
+                    FROM compra ORDER BY nome_produto, datacompra DESC";
 
             $resultado = $conexao->query($sql);
 
-            $resultado_html = "<h2>Compras por filme</h2>";
+            $resultado_html = "<h2>Compras por produto</h2>";
             $resultado_html .= "<table border='1'>
                                 <tr>
-                                    <th>Filme</th>
+                                    <th>Produto</th>
                                     <th>Cliente</th>
                                     <th>Valor</th>
                                     <th>Data</th>
@@ -127,7 +127,7 @@ if ($filtro) {
                 $valor = number_format($r['valortotal'], 2, ',', '.');
 
                 $resultado_html .= "<tr>
-                                        <td>{$r['titulo_filme']}</td>
+                                        <td>{$r['nome_produto']}</td>
                                         <td>{$r['nome_cliente']}</td>
                                         <td>R$ {$valor}</td>
                                         <td>{$r['datacompra']}</td>
@@ -148,7 +148,7 @@ if ($filtro) {
             $resultado_html .= "<table border='1'>
                                 <tr>
                                     <th>Cliente</th>
-                                    <th>Filme</th>
+                                    <th>Produto</th>
                                     <th>Valor</th>
                                     <th>Data</th>
                                 </tr>";
@@ -158,7 +158,7 @@ if ($filtro) {
 
                 $resultado_html .= "<tr>
                                         <td>{$r['nome_cliente']}</td>
-                                        <td>{$r['titulo_filme']}</td>
+                                        <td>{$r['nome_produto']}</td>
                                         <td>R$ {$valor}</td>
                                         <td>{$r['datacompra']}</td>
                                     </tr>";
@@ -178,7 +178,7 @@ if ($filtro) {
             $resultado_html .= "<table border='1'>
                                 <tr>
                                     <th>Cliente</th>
-                                    <th>Filme</th>
+                                    <th>Produto</th>
                                     <th>Valor</th>
                                     <th>Data</th>
                                 </tr>";
@@ -188,7 +188,7 @@ if ($filtro) {
 
                 $resultado_html .= "<tr>
                                         <td>{$r['nome_cliente']}</td>
-                                        <td>{$r['titulo_filme']}</td>
+                                        <td>{$r['nome_produto']}</td>
                                         <td>R$ {$valor}</td>
                                         <td>{$r['datacompra']}</td>
                                     </tr>";
@@ -217,7 +217,7 @@ if ($filtro) {
             $resultado_html .= "<table border='1'>
                                 <tr>
                                     <th>Cliente</th>
-                                    <th>Filme</th>
+                                    <th>Produto</th>
                                     <th>Valor</th>
                                     <th>Data</th>
                                 </tr>";
@@ -227,7 +227,7 @@ if ($filtro) {
 
                 $resultado_html .= "<tr>
                                         <td>{$r['nome_cliente']}</td>
-                                        <td>{$r['titulo_filme']}</td>
+                                        <td>{$r['nome_produto']}</td>
                                         <td>R$ {$valor}</td>
                                         <td>{$r['datacompra']}</td>
                                     </tr>";
@@ -244,7 +244,7 @@ if ($filtro) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ML games</title>
+    <title>Baratão do Tigas</title>
     <link rel="stylesheet" href="Relatorio.css">
 </head>
 <body>
@@ -252,7 +252,7 @@ if ($filtro) {
     <div class="logo"><img src="../Imgs/ML Games.png" alt=""></div>
     <a href="../Home/Home.php" class="btn-a">Voltar</a>
 
-    <!-- FORMULÁRIO -->
+
     <form class="vidro" method="POST" action="Relatorio.php">
 
         <div>
@@ -261,11 +261,11 @@ if ($filtro) {
                 <option value="">Selecione...</option>
 
                 <option value="total_cliente">Total de compras por cliente</option>
-                <option value="total_filme">Total de compras por filme</option>
+                <option value="total_produto">Total de compras por produto</option>
                 <option value="valor_total">Valor total vendido</option>
 
                 <option value="compras_cliente">Listar compras por cliente</option>
-                <option value="compras_filme">Listar compras por jogo</option>
+                <option value="compras_produto">Listar compras por produto</option>
 
                 <option value="maior_compra">Maior → menor valor</option>
                 <option value="menor_compra">Menor → maior valor</option>
@@ -274,7 +274,6 @@ if ($filtro) {
             </select>
         </div>
 
-        <!-- CAMPOS DE PERÍODO (APARECEM AUTOMATICAMENTE) -->
         <div id="periodo_campos" style="display:none; margin-top:10px;">
 
             <label>Data inicial:</label>
@@ -291,7 +290,6 @@ if ($filtro) {
 
     </form>
 
-    <!-- RESULTADO -->
     <div class="vidro3">
         <?php
         if ($temRelatorio) {
@@ -301,7 +299,6 @@ if ($filtro) {
     </div>
 
     <script>
-        // Exibir os campos de data quando o filtro "por período" for selecionado
         document.getElementById("filtro").addEventListener("change", function () {
             let periodo = document.getElementById("periodo_campos");
 
@@ -312,6 +309,5 @@ if ($filtro) {
             }
         });
     </script>
-
 </body>
 </html>

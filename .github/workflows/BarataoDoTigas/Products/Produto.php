@@ -2,7 +2,6 @@
 session_start();
 include_once(__DIR__ . "/../config.php");
 
-// Verifica admin logado
 $admin_id = $_SESSION['idadmin'] ?? null;
 
 if (!$admin_id) {
@@ -10,23 +9,21 @@ if (!$admin_id) {
     exit;
 }
 
-// -------------------- CADASTRAR GAME --------------------
+// -------------------- CADASTRAR PRODUTO --------------------
 if (isset($_POST['cadastrar'])) {
     
-    $titulo = $_POST['titulo'];
-    $genero = $_POST['genero'];
+    $nome = $_POST['nome'];
     $preco = $_POST['preco'];
     
-    // Insere o game atribuindo o admin logado
-    $sql_insert = "INSERT INTO filme (titulo, genero, preco, admin_idadmin) 
-                   VALUES ('$titulo', '$genero', '$preco', $admin_id)";
+    $sql_insert = "INSERT INTO produto (nome, preco, admin_idadmin) 
+                   VALUES ('$nome', '$preco', $admin_id)";
     mysqli_query($conexao, $sql_insert);
-    header("Location: ../Movie.php");
+    header("Location: ../Produto.php");
     exit;
 }
 
-// -------------------- LISTAR GAMES --------------------
-$sql_select = "SELECT * FROM filme ORDER BY idfilme DESC";
+// -------------------- LISTAR PRODUTOS --------------------
+$sql_select = "SELECT * FROM produto ORDER BY idproduto DESC";
 $result = mysqli_query($conexao, $sql_select);
 
 ?>
@@ -38,7 +35,7 @@ $result = mysqli_query($conexao, $sql_select);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ML Games</title>
-    <link rel="stylesheet" href="Movie.css">
+    <link rel="stylesheet" href="Produto.css">
 </head>
 
 <body>
@@ -53,13 +50,10 @@ $result = mysqli_query($conexao, $sql_select);
 
         <a href="../Home/Home.php" class="btn-a">Voltar</a>
 
-        <form class="vidro" method="POST" action="Movie.php">
+        <form class="vidro" method="POST" action="Produto.php">
 
             <p>Título</p>
-            <input type="text" name="titulo" required>
-
-            <p>Gênero</p>
-            <input type="text" name="genero" required>
+            <input type="text" name="nome" required>
 
             <p>Preço</p>
             <input type="text" name="preco" required>
@@ -84,14 +78,13 @@ $result = mysqli_query($conexao, $sql_select);
         <div class="vidro3">
             <table class="table">
                 <div class="cad">
-                <label class="ad">Filmes</label>
+                <label class="ad">Produtos</label>
             </div>
 
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Título</th>
-                        <th>Gênero</th>
+                        <th>Nome</th>
                         <th>Preço</th>
                         <th>ID Admin</th>
                         <th>Ação</th>
@@ -100,21 +93,20 @@ $result = mysqli_query($conexao, $sql_select);
                 <tbody>
 
                     <?php
-                    while ($movie = mysqli_fetch_assoc($result)) {
+                    while ($produto = mysqli_fetch_assoc($result)) {
                         echo "<tr>";
-                        echo "<td>" . $movie['idtitulo'] . "</td>";
-                        echo "<td>" . $movie['titulo'] . "</td>";
-                        echo "<td>" . $movie['genero'] . "</td>";
-                        echo "<td>" . $movie['preco'] . "</td>";
-                        echo "<td>" . $movie['admin_idadmin'] . "</td>";
+                        echo "<td>" . $produto['idproduto'] . "</td>";
+                        echo "<td>" . $produto['nome'] . "</td>";
+                        echo "<td>" . $produto['preco'] . "</td>";
+                        echo "<td>" . $produto['admin_idadmin'] . "</td>";
 
                         echo "<td>
-                                <a  href='EditarMovie.php?id=" . $movie['idgame'] . "'>
+                                <a  href='EditarProduto.php?id=" . $produto['idproduto'] . "'>
                                     <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-pencil' viewBox='0 0 16 16'>
                                         <path d='M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325'/>
                                     </svg>
                                 </a>
-                                <a href='DeleteMovie.php?id=" . $movie['idgame'] . "'>
+                                <a href='DeleteProduto.php?id=" . $produto['idproduto'] . "'>
                                 <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-trash-fill' viewBox='0 0 16 16'>
                                     <path d='M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5M8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5m3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0'/>
                                 </svg>
@@ -124,12 +116,9 @@ $result = mysqli_query($conexao, $sql_select);
                         echo "</tr>";
                     }
                     ?>
-
                 </tbody>
             </table>
         </div>
-
     </div>
-
 </body>
 </html>
