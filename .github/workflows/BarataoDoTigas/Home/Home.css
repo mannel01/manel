@@ -1,0 +1,129 @@
+/* ======== GERAL ======== */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow: hidden;
+}
+
+.tela-inicial {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+/* ======== FUNDO ======== */
+
+.tela-inicial::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-image: url("../Imgs/download\ \(3\).jpg"); /* ajuste se o nome for outro */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    filter: brightness(70%);
+    z-index: 0;
+}
+
+/* ======== MENU LATERAL (VIDRO) ======== */
+
+.vidro {
+    position: absolute;
+    top: 20%;
+    left: 5%;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    padding: 20px 30px;
+    border-radius: 25px;
+
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    z-index: 10;
+}
+
+/* botões do menu lateral */
+
+.btn-a {
+    text-decoration: none;
+    width: 180px;
+    padding: 18px;
+
+    border: none;
+    border-radius: 18px;
+
+    background: rgba(0, 0, 0, 0.35);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+
+    cursor: pointer;
+    transition: 0.2s;
+
+    backdrop-filter: blur(6px);
+}
+
+.btn-a:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+/* ======== LOGO CENTRAL (VIDRO) ======== */
+
+.vidro2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    padding: 50px 70px;
+    border-radius: 30px;
+
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    z-index: 10;
+}
+
+.vidro2 img {
+    width: 320px;
+    height: auto;
+    display: block;
+}
+
+/* ======== BOTÃO SAIR (CANTO SUPERIOR DIREITO) ======== */
+
+.btn-av {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    z-index: 11;
+}
+
+.btn-avo {
+    padding: 12px 30px;
+
+    background: rgba(0, 0, 0, 0.35);
+    color: white;
+
+    font-size: 16px;
+    border: none;
+    border-radius: 18px;
+
+    cursor: pointer;
+    transition: 0.2s;
+    backdrop-filter: blur(10px);
+}
+
+.btn-avo:hover {
+    background: rgba(255, 255, 255, 0.25);
+}

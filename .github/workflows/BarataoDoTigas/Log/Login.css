@@ -1,0 +1,145 @@
+/* ======== GERAL ======== */
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #222;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.login {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* imagem de fundo */
+.login img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(70%);
+    z-index: 0;
+}
+
+/* ======== TOPO ROXO ======== */
+.top-bar {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 110px;
+    background: #4b0380;   /* roxo igual ao da imagem */
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    z-index: 10;
+}
+
+/* logo */
+.logo-login {
+    position: absolute;
+    top: 12px;
+    left: 25px;
+    height: 90px;
+    z-index: 11;
+}
+
+/* seta do centro */
+.arrow-icon {
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 45px;
+    opacity: 0.8;
+    z-index: 11;
+}
+
+/* botão add admin (ou cadastrar) */
+.btn-a {
+    position: absolute;
+    top: 30px;
+    right: 40px;
+
+    padding: 12px 28px;
+    background: rgba(0, 0, 0, 0.35);
+    border-radius: 18px;
+    color: white;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+    backdrop-filter: blur(10px);
+    transition: 0.2s;
+    z-index: 11;
+}
+
+.btn-a:hover {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+/* ======== CARD DE LOGIN (Vidro) ======== */
+
+.card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    width: 350px;
+    padding: 35px 40px;
+
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    border-radius: 25px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+
+    z-index: 20;
+}
+
+/* textos */
+.card label {
+    color: white;
+    font-size: 15px;
+    margin-left: 3px;
+}
+
+/* inputs */
+.campo {
+    width: 100%;
+    padding: 12px;
+    border-radius: 12px;
+    border: none;
+    outline: none;
+    margin-top: 5px;
+
+    background: rgba(0, 0, 0, 0.45);
+    color: white;
+}
+
+/* Botão Entrar */
+.loginBotoes {
+    width: 100%;
+    padding: 14px;
+    margin-top: 10px;
+
+    background: rgba(0, 0, 0, 0.55);
+    border: none;
+    border-radius: 15px;
+
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+.loginBotoes:hover {
+    background: rgba(255, 255, 255, 0.25);
+}

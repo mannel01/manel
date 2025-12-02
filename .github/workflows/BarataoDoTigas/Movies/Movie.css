@@ -1,0 +1,186 @@
+/* Reset básico */
+body {
+    margin: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background: url("../Imgs/download\ \(2\).gif") no-repeat center center fixed;
+    background-size: cover;
+}
+/* Reset básico */
+
+/* Container principal */
+.tela-produto {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+}
+
+/* Remover a imagem antiga que cobria tudo */
+.tela-produto img {
+    display: none;
+}
+
+/* Logo no canto superior esquerdo */
+.logo img {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    height: 70px;
+    z-index: 10;
+}
+
+/* Botão Voltar */
+.btn-a {
+    position: absolute;
+    top: 5%;
+    right: 5%;
+    padding: 15px 25px;
+    font-weight: bold;
+    font-size: 1.5em;
+    text-decoration: none;
+    background-color: rgba(0, 0, 0, 0.45);
+    color: white;
+    border-radius: 2dvh;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.45);
+    cursor: pointer;
+    transition: transform 0.2s;
+    z-index: 10;
+}
+
+.btn-a:hover {
+    transform: scale(1.05);
+}
+
+.cad {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.cad .ad {
+    font-size: 28px;
+    font-weight: bold;
+}
+/* Formulário centralizado */
+.vidro {
+    position: absolute;
+    top: 50%;
+    left: 16%;   /* antes 25% — agora realmente esquerda */
+    transform: translate(-50%, -50%);
+    display: grid;
+    
+    width: 320px;
+    padding: 30px 27px;
+    border-radius: 30px;
+    background-color: rgba(43, 43, 43, 0.28);
+    backdrop-filter: blur(22px) saturate(160%);
+    color: white;
+    z-index: 20; /* acima da tabela */
+}
+
+
+/* Inputs e Labels */
+.vidro p {
+    margin: 0 0 5px 0;
+    color: white;
+}
+
+.vidro input {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 15px;
+    
+    border-radius: 30px;
+    
+    background-color: rgba(0, 0, 0, 0.45);
+    color: white;
+    outline: none;
+}
+
+#p{
+    width: 70%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 30px;
+    background-color: rgba(0, 0, 0, 0.45);
+    color: white;
+    outline: none;
+
+}
+
+/* Botões do formulário */
+.btns {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+button {
+    margin: 2%;
+    padding: 12px;
+    border: none;
+    border-radius: 12px;
+    background-color: rgba(0, 0, 0, 0.45);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+/* Área da tabela */
+.vidro3 {
+    
+    position: absolute;
+    top: 70%;
+    right: 5%;
+    transform: translate(0, -50%);
+    width: 45%;
+    padding: 3%;
+    padding-bottom: 20%;
+    border-radius: 20px;
+    background-color: rgba(43, 43, 43, 0.28);
+    backdrop-filter: blur(22px) saturate(160%);
+    -webkit-backdrop-filter: blur(22px) saturate(160%);
+    color: white;
+    z-index: 10;
+}
+
+.vidro4 {
+    position: absolute;
+    top: 30%;
+    right: 40%;
+    transform: translate(0, -50%);
+    
+    padding: 1%;
+    padding-right: 0%;
+    border-radius: 30px;
+    background-color: rgba(43, 43, 43, 0.28);
+    backdrop-filter: blur(22px) saturate(160%);
+    -webkit-backdrop-filter: blur(22px) saturate(160%);
+    color: white;
+    z-index: 10;
+}
+
+/* Tabela */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    color: white;
+}
+
+.table th,
+.table td {
+    padding: 10px;
+    text-align: left;
+}
+
+.table th {
+    border-bottom: 2px solid white;
+}
+
+.table tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.05);
+}
