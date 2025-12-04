@@ -89,7 +89,7 @@ $compras = $conexao->query($sqlCompras);
 
         <div>
             <label for="cliente">Selecione o cliente:</label>
-            <select name="cliente" id="cliente" required>
+            <select name="camp-s" id="cliente" required>
                 <option value="">Selecione...</option>
 
                 <?php while ($c = $clientes->fetch_assoc()) { ?>
