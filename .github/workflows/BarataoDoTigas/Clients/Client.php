@@ -27,7 +27,7 @@ if (isset($_POST['cadastrar'])) {
         }
     }
 
-    header("Location: Cliente.php");
+    header("Location: Client.php");
     exit;
 }
 

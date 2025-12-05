@@ -12,7 +12,7 @@ if (!$admin_id) {
 
 // Verifica ID do cliente
 if (!isset($_GET['id'])) {
-    header("Location: Cliente.php");
+    header("Location: Client.php");
     exit;
 }
 
@@ -23,7 +23,7 @@ $sql = "SELECT * FROM cliente WHERE idcliente = $id";
 $result = $conexao->query($sql);
 
 if ($result->num_rows == 0) {
-    header("Location: Cliente.php");
+    header("Location: Client.php");
     exit;
 }
 
