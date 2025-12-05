@@ -7,7 +7,7 @@
 body{
     margin: 0;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    background: url("../Imgs/Spiderman_Miles\ morales\ and\ gwen\ stacy.jpg") no-repeat center center fixed;
+    background: url("../Imgs/Soberania\ 2049.jpg") no-repeat center center fixed;
     background-size: cover;
 }
 .barra-tela-cliente {
@@ -151,9 +151,9 @@ button:hover {
     top: 70%;
     right: 20%;
     transform: translate(0, -50%);
-    width: 50%;
+    
     padding: 1%;
-    padding-bottom: 30%;
+    
     padding-right: 2%;
     border-radius: 30px;
     background: rgba(0,0,0,0.45);

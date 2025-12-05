@@ -57,7 +57,7 @@ $result = $conexao->query($sql);
 <body>
 
     <div class="barra-tela-cliente">
-        <div class="logo"><img src="../Imgs/ML Games.png" alt=""></div>
+        <div class="logo"><img src="../Imgs/LOGOT.png" alt=""></div>
         <a href="../Home/Home.php"><button type="button" class="btn-a" onclick="Home()">Voltar</button></a>
     </div>
 

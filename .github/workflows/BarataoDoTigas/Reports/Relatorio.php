@@ -247,17 +247,19 @@ if ($filtro) {
     <title>Baratão do Tigas</title>
     <link rel="stylesheet" href="Relatorio.css">
 </head>
-<body>
-    
-    <div class="logo"><img src="../Imgs/ML Games.png" alt=""></div>
+<body >
+    <div class="barra-tela-relatorio">
+        <div class="logo"><img src="../Imgs/LOGOT.png" alt=""></div>
     <a href="../Home/Home.php" class="btn-a">Voltar</a>
+    </div>
+    
 
 
     <form class="vidro" method="POST" action="Relatorio.php">
 
         <div>
             <label for="filtro">Selecione o filtro:</label>
-            <select name="filtro" id="filtro" required>
+            <select name="filtro" class="camp-s" required>
                 <option value="">Selecione...</option>
 
                 <option value="total_cliente">Total de compras por cliente</option>

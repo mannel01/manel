@@ -81,7 +81,7 @@ $compras = $conexao->query($sqlCompras);
 <body>
 
     <div class="barra-tela-compra">
-        <div class="logo"><img src="../Imgs/ML Games.png" alt=""></div>
+        <div class="logo"><img src="../Imgs/LOGOT.png" alt=""></div>
         <a href="../Home/Home.php" class="btn-a">Voltar</a>
     </div>
 
@@ -89,7 +89,7 @@ $compras = $conexao->query($sqlCompras);
 
         <div>
             <label for="cliente">Selecione o cliente:</label>
-            <select name="camp-s" id="cliente" required>
+            <select class="camp-s" name="cliente" required>
                 <option value="">Selecione...</option>
 
                 <?php while ($c = $clientes->fetch_assoc()) { ?>
@@ -100,7 +100,7 @@ $compras = $conexao->query($sqlCompras);
 
         <div>
             <label for="jogo">Selecione o produto:</label>
-            <select name="produto" id="produto" required>
+            <select name="produto" class="camp-s" required>
                 <option value="">Selecione...</option>
 
                 <?php while ($p = $produtos->fetch_assoc()) { ?>
@@ -127,7 +127,7 @@ $compras = $conexao->query($sqlCompras);
     <div class="vidro3">
         <h2>Lista de Compras</h2>
 
-        <table border="1" class="tabela-compras">
+        <table border="1" class="table">
             <tr>
                 <th>ID</th>
                 <th>Cliente</th>

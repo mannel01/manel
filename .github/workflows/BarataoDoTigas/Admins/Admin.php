@@ -46,7 +46,7 @@ $result = $conexao->query($sql);
 <body>
 
     <div class="barra-tela-admin">
-        <div class="logo"><img src="../Imgs/ML Games.png" alt=""></div>
+        <div class="logo"><img src="../Imgs/LOGOT.png" alt=""></div>
         <a href="../Log/Login.php">Voltar</a>
     </div>
 

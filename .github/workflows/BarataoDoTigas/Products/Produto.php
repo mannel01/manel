@@ -42,11 +42,11 @@ $result = mysqli_query($conexao, $sql_select);
 
     <div class="tela-produto">
 
-        <img src="../Imgs/Jake.gif" alt="">
+        <img src="../Imgs/Liquor Store Pixel ARt.jpg" alt="">
 
         <div class="barra-tela-produto"></div>
 
-        <div class="logo"><img src="../Imgs/ML Games.png" alt=""></div>
+        <div class="logo"><img src="../Imgs/LOGOT.png" alt=""></div>
 
         <a href="../Home/Home.php" class="btn-a">Voltar</a>
 
